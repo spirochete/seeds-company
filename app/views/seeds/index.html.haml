@@ -1,0 +1,27 @@
+- model_class = Seed
+.page-header
+  %h2 Seeds List
+%table.table.table-striped
+  %thead
+    %tr
+      %th Catalog #
+      %th Common Name
+      %th Variety
+      %th Genus
+      %th Species
+      %th Sub-Species
+      %th Organic?
+      %th Seed Type
+  %tbody
+    - @seeds.each do |seed|
+      %tr
+        %td= link_to seed.catalog_number, seed
+        %td= seed.common_name
+        %td= seed.variety
+        %td= seed.genus
+        %td= seed.species
+        %td= seed.sub_species
+        %td= seed.organic
+        %td= seed.seed_type
+
+= link_to "Add New Seed Variety", new_seed_path

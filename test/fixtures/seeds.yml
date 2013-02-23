@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  catalog_number: MyString
+  common_name: MyString
+  variety: MyString
+  genus: MyString
+  species: MyString
+  sub_species: MyString
+  organic: false
+  seed_type: MyString
+  origin: MyString
+  date_acquired: 2013-02-22
+  germination: 1
+  days_to_maturity: 1
+  notes: MyText
+
+two:
+  catalog_number: MyString
+  common_name: MyString
+  variety: MyString
+  genus: MyString
+  species: MyString
+  sub_species: MyString
+  organic: false
+  seed_type: MyString
+  origin: MyString
+  date_acquired: 2013-02-22
+  germination: 1
+  days_to_maturity: 1
+  notes: MyText

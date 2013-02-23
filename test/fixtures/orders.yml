@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_date: 2013-02-22
+  subtotal: 
+  shipping_cost: 
+  shipping_method: MyString
+  shipping_instructions: MyText
+  payment_method: MyString
+  order_status: MyString
+
+two:
+  order_date: 2013-02-22
+  subtotal: 
+  shipping_cost: 
+  shipping_method: MyString
+  shipping_instructions: MyText
+  payment_method: MyString
+  order_status: MyString

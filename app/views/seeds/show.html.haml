@@ -1,0 +1,61 @@
+- model_class = Seed
+.page-header
+  %h3= "#{@seed.catalog_number}: #{@seed.variety} #{@seed.common_name}"
+
+%p
+  %b Name
+  = "#{@seed.genus} #{@seed.species}"
+  - if @seed.sub_species?
+    = "var. #{@seed.sub_species}"
+
+%p
+  %b Organic:
+  - if @seed.organic?
+    = "Yes"
+  - else
+    = "No"
+
+- if @seed.seed_type?
+  %p
+    %b Type:
+    = @seed.seed_type
+
+- if @seed.days_to_maturity?
+  %p
+    %b Days to maturity:
+    = @seed.days_to_maturity
+
+- if @seed.germination?
+  %p
+    %b Germ:
+    = "#{@seed.germination}%"
+
+- if @seed.origin?
+  %p
+    %b Origin:
+    = @seed.origin
+
+- if @seed.date_acquired?
+  %p
+    %b Date Acquired:
+    = @seed.date_acquired
+
+- if @seed.notes?
+  %p
+    %b Notes:
+    = @seed.notes
+
+
+- if !@seed.packets.nil?
+  %b Packets Available:
+  %ul
+    - @seed.packets.each do |packet|
+      %li
+        %b= packet.packet_size
+        = "(#{packet.quantity_available})"
+        = " - $#{packet.price}"
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), seeds_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_seed_path(@seed), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), seed_path(@seed), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

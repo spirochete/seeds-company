@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  packet_size: MyString
+  price: 
+  discount_percentage: 1.5
+  quantity_available: 1
+
+two:
+  packet_size: MyString
+  price: 
+  discount_percentage: 1.5
+  quantity_available: 1

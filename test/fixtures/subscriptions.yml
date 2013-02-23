@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer: 
+  subscription_type: MyString
+  subscribed: false
+
+two:
+  customer: 
+  subscription_type: MyString
+  subscribed: false

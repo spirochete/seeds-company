@@ -1,0 +1,24 @@
+= simple_form_for @seed, :html => { :class => 'form-horizontal' } do |f|
+    
+  = f.input :catalog_number  
+  = f.input :common_name  
+  = f.input :variety   
+  = f.input :genus    
+  = f.input :species 
+  = f.input :sub_species
+  = f.input :organic
+  = f.input :seed_type
+  = f.input :origin
+  = f.input :date_acquired, as: :date
+  = f.input :germination, :input_html => { :size => 3 }
+  = f.input :days_to_maturity, :input_html => { :size => 3, :maxlength => 3 }
+  = f.input :notes, as: :text, :input_html => { :size => "100x10" }
+
+  #packets
+    = f.simple_fields_for :packets, :html => { :class => 'form-horizontal' } do |packet|
+      = render 'packet_fields', :f => packet
+    .links
+      = link_to_add_association 'Add Packet', f, :packets
+  
+  .form-actions
+    = f.submit nil
