@@ -10,4 +10,10 @@ class Customer < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  attr_accessible :first_name, :last_name, :address_one, :address_two, :city, :state_province
+  attr_accessible :country, :postal_code, :business_name, :phone_number
+
+  validates_presence_of :first_name, :last_name, :address_one, :city, :state_province, :country, :postal_code, :phone_number
+
 end

@@ -16,5 +16,5 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'cocoon'
 gem 'simple_form'
-
+gem 'country_select'
 gem 'devise'

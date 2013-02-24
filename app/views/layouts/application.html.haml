@@ -18,33 +18,24 @@
 
 
   %body
-    .navbar.navbar-fluid-top
+    .navbar.navbar-fixed-top
       .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-ba
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Seed Company", root_path
-              - if customer_signed_in?
-                %li= link_to current_customer.email, edit_customer_registration_path
-                %li= link_to "log out", destroy_customer_session_path, :method => :delete
-              -else
-                %li= link_to "log in", new_customer_session_path
-                %li= link_to "register", new_customer_registration_path
+        %ul.nav
+          %li= link_to "Seed Company", root_path
+          - if customer_signed_in?
+            %li= link_to current_customer.email, edit_customer_registration_path
+            %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
+          -else
+            %li= link_to "Login", new_customer_session_path
+            %li= link_to "Register", new_customer_registration_path
 
-    .container-fluid
-
-      .row-fluid
+    .container
+      .row
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to "Seeds List", root_path
+              %li= link_to "Add New Seed", new_seed_path
         .span9
           = bootstrap_flash
           = yield

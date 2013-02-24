@@ -6,8 +6,17 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.span3, .span9 { padding-top: 60px; }
+.span3 { margin-left: 0;}
+
 .links, .nested-fields {
-	font-size: 18px;
 	margin-left: 25px;
 	margin-bottom: 25px;
+}
+
+.nested-fields {
+	border: 1px dashed #000;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	width: 450px;
 }
