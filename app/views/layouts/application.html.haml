@@ -36,13 +36,12 @@
             %ul.nav.nav-list
               %li= link_to "Seeds List", root_path
               %li= link_to "Add New Seed", new_seed_path
-              %li
-                %p.search
-                  = form_tag seeds_path, :method => :get do
-                    = text_field_tag :search, params[:search]
-                    = submit_tag "Search"
         .span9
           = bootstrap_flash
+          = form_tag seeds_path, :method => :get do
+            %p.search
+              = text_field_tag :search, params[:search]
+              = submit_tag "Search", :class => :btn
           = yield
     
       %footer

@@ -11,11 +11,13 @@
 
 .well.sidebar-nav {
 	padding-left: 5px;
+	min-height: 200px;
 
 	a:hover {
 		color: inherit;
 		background: transparent;
 	}
+
 }
 
 .links, .nested-fields {
@@ -31,5 +33,6 @@
 }
 
 p.search {
-	margin-top: 50px;
+	text-align: right;
+	.btn { margin-bottom: 10px; }
 }
