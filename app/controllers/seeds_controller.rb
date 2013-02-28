@@ -5,7 +5,11 @@ class SeedsController < ApplicationController
   # GET /seeds
   # GET /seeds.json
   def index
-    @seeds = Seed.all
+    if params[:search].present?
+      @seeds = Seed.order(:catalog_number).basic_search(params[:search])
+    else
+      @seeds = Seed.order(:catalog_number).all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

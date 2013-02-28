@@ -1,0 +1,35 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.span3, .span9 { padding-top: 60px; }
+.span3 { margin-left: 0px; }
+
+.well.sidebar-nav {
+	padding-left: 5px;
+
+	a:hover {
+		color: inherit;
+		background: transparent;
+	}
+}
+
+.links, .nested-fields {
+	margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+.nested-fields {
+	border: 1px dashed #000;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	width: 450px;
+}
+
+p.search {
+	margin-top: 50px;
+}

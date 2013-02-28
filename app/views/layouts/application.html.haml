@@ -21,7 +21,7 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         %ul.nav
-          %li= link_to "Seed Company", root_path
+          %li= link_to "Seeds Company", root_path
           - if customer_signed_in?
             %li= link_to current_customer.email, edit_customer_registration_path
             %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
@@ -36,6 +36,11 @@
             %ul.nav.nav-list
               %li= link_to "Seeds List", root_path
               %li= link_to "Add New Seed", new_seed_path
+              %li
+                %p.search
+                  = form_tag seeds_path, :method => :get do
+                    = text_field_tag :search, params[:search]
+                    = submit_tag "Search"
         .span9
           = bootstrap_flash
           = yield
