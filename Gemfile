@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.10'
 gem 'psych'
 gem 'pg'
-gem 'texticle', '~> 2.0', require: 'texticle/rails'
+gem 'textacular', '~> 3.0', require: 'textacular/rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
