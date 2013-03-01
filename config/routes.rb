@@ -1,6 +1,7 @@
 Seedcompany::Application.routes.draw do
 
   devise_for :customers
+  devise_for :admins
 
   resources :seeds do
     resources :photos
