@@ -1,0 +1,23 @@
+- model_class = Customer
+.page-header
+  %h2 Customer List
+
+- if !@customers.nil?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %th Email
+        %th Phone #
+        %th Location
+    %tbody
+      - @customers.each do |c|
+        %tr
+          %td= c._id
+          %td= "#{c.last_name}, #{c.first_name}"
+          %td= c.email
+          %td= c.phone_number
+          %td= "#{c.city}, #{c.state_province} (#{c.country})"
+
+= link_to "Add New Customer", new_customer_registration_path

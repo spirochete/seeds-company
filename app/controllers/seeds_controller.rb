@@ -87,4 +87,15 @@ class SeedsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def customer_list
+    @customers = Customer.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @customers }
+    end
+
+  end
+
 end

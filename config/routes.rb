@@ -12,6 +12,8 @@ Seedcompany::Application.routes.draw do
     resources :order_items
   end
 
+  match 'customer_list' => 'seeds#customer_list'
+
   root :to => "seeds#index"
   
   # The priority is based upon order of creation:

@@ -18,6 +18,10 @@
 		background: transparent;
 	}
 
+	ul + div { margin-top: 15px; }
+
+	.nav-header { font-size: 1.2em; }
+
 }
 
 .links, .nested-fields {
