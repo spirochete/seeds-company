@@ -44,7 +44,7 @@
         .span9
           = bootstrap_flash
           - if current_page?(customers_path)
-            = form_tag customer_list_path, :method => :get do
+            = form_tag customers_path, :method => :get do
               %p.search
                 = text_field_tag :search, params[:search]
                 = submit_tag "Search Customers", :class => :btn
