@@ -117,6 +117,8 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    turbolinks (1.0.0)
+      coffee-rails
     twitter-bootstrap-rails (2.2.0)
       actionpack (>= 3.1)
       execjs
@@ -144,5 +146,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   textacular (~> 3.0)
+  turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
