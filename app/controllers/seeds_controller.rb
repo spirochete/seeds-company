@@ -89,7 +89,12 @@ class SeedsController < ApplicationController
   end
 
   def customer_list
-    @customers = Customer.all
+
+    if params[:search].present?
+      @customers = Customer.order(:id).basic_search(params[:search])
+    else
+      @customers = Customer.order(:id).all
+    end
 
     respond_to do |format|
       format.html

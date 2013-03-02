@@ -1,0 +1,22 @@
+%h2
+  Your Account
+= simple_form_for @customer do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, :required => true, :autofocus => true
+
+    = f.input :first_name, :required => true
+    = f.input :last_name, :required => true
+    = f.input :address_one, :required => true
+    = f.input :address_two
+    = f.input :city, :required => true
+    = f.input :state_province, label: "State/Province", :required => true
+    = f.input :country, :required => true
+    = f.input :postal_code, :required => true
+    = f.input :business_name
+    = f.input :phone_number, :required => true
+    
+    = f.input :password, :autocomplete => "off", :hint => "Leave blank if you don't want to change your password", :required => false
+    = f.input :password_confirmation, :required => false
+  .form-actions
+    = f.button :submit, "Update"

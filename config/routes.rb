@@ -3,6 +3,10 @@ Seedcompany::Application.routes.draw do
   devise_for :customers
   devise_for :admins
 
+  scope "/admin" do
+    resources :customers
+  end
+
   resources :seeds do
     resources :photos
     resources :packets
@@ -11,8 +15,6 @@ Seedcompany::Application.routes.draw do
   resources :orders do
     resources :order_items
   end
-
-  match 'customer_list' => 'seeds#customer_list'
 
   root :to => "seeds#index"
   

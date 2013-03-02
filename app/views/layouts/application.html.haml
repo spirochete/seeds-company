@@ -35,18 +35,24 @@
           .well.sidebar-nav
             .nav-header Customers
             %ul.nav.nav-list
-              %li= link_to "Add New Customer", new_customer_registration_path
-              %li= link_to "Customer List", customer_list_path
+              %li= link_to "Add New Customer", new_customer_path
+              %li= link_to "Customer List", customers_path
             .nav-header Seeds
             %ul.nav.nav-list
               %li= link_to "Add New Seed", new_seed_path
               %li= link_to "Seeds List", root_path
         .span9
           = bootstrap_flash
-          = form_tag seeds_path, :method => :get do
-            %p.search
-              = text_field_tag :search, params[:search]
-              = submit_tag "Search", :class => :btn
+          - if current_page?(customers_path)
+            = form_tag customer_list_path, :method => :get do
+              %p.search
+                = text_field_tag :search, params[:search]
+                = submit_tag "Search Customers", :class => :btn
+          -elsif current_page?(root_path)
+            = form_tag seeds_path, :method => :get do
+              %p.search
+                = text_field_tag :search, params[:search]
+                = submit_tag "Search Seeds", :class => :btn
           = yield
     
       %footer
