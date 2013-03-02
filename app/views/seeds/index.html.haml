@@ -16,7 +16,7 @@
   %tbody
     - @seeds.each do |seed|
       %tr
-        %td= link_to seed.catalog_number, seed
+        %td= link_to seed.catalog_number, edit_seed_path(seed)
         %td= seed.common_name
         %td= seed.variety
         %td= seed.genus
