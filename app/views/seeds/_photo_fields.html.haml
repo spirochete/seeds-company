@@ -1,8 +1,11 @@
 .nested-fields
   %h3 Photo
   - if f.object.new_record?
-    = f.input :photo_url, :as => :file, label: false
-    = link_to_remove_association "> Cancel", f
+    %p
+      = f.file_field :photo_url
+    %p= link_to_remove_association "> Cancel", f
   - else
-    = image_tag(f.object.photo_url.url(:thumb))
-    = f.input :_destroy, :as => :boolean, inline_label: "Destroy?", label: false
+    %table
+      %tr
+        %td= link_to image_tag(f.object.photo_url.url(:thumb)), f.object.photo_url.url
+        %td= f.input :_destroy, :as => :boolean, inline_label: "Destroy?", label: false

@@ -6,7 +6,6 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-.span3, .span9 { padding-top: 60px; }
 .span3 { margin-left: 0px; }
 
 .well.sidebar-nav {
@@ -34,6 +33,7 @@
 	padding-left: 15px;
 	padding-bottom: 15px;
 	width: 450px;
+	td { width: 150px;}
 }
 
 p.search {
