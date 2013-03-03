@@ -8,4 +8,6 @@
     %table
       %tr
         %td= link_to image_tag(f.object.photo_url.url(:thumb)), f.object.photo_url.url
-        %td= f.input :_destroy, :as => :boolean, inline_label: "Destroy?", label: false
+        %td
+          = f.check_box :_destroy
+          = f.label :_destroy, "Destroy?", :style => "display: inline"

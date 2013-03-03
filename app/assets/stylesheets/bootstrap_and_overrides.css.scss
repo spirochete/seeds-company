@@ -29,11 +29,14 @@
 }
 
 .nested-fields {
-	border: 1px dashed #000;
+	border: 1px solid #c0c0c0;
 	padding-left: 15px;
 	padding-bottom: 15px;
 	width: 450px;
-	td { width: 150px;}
+	td {
+	  width: 200px;
+	  text-align: center;
+	}
 }
 
 p.search {
