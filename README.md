@@ -1,16 +1,16 @@
 Seeds Company
 =============
 
-This is a Rails app to both manage a seed bank and to distribute/sell seeds and other plant material.
-Currently, the seed bank side of things is working well. The storefront and full-text search are not far behind.
+This is a Rails app to both manage a seed bank and distribute (sell) seeds/plant material.
+Currently, the seed bank side of things is working well. The storefront is not far behind.
 At this stage, if you want to keep track of your seeds, go for it. If you're looking for a shop, hang in there.
 
 Why?
 ----
 
-Critical seeds companies and distributors are using antiquated and obfuscated applications for managing
+I noticed that many seeds companies and distributors are using antiquated and/or obfuscated applications for managing
 their collections (e.g. the USDA's <a href="http://www.ars-grin.gov/npgs/aboutgrin.html">GRIN</a>, and Fedco Seeds).
-Still more aren't even digitized. By creating this, I hope to give seed savers a free, simple way to organize their collections.
+Still more collections aren't even digitized. By creating this, I hope to give seed savers a free, simple way to organize their collections.
 
 Getting Started
 ---------------
