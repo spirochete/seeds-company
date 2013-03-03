@@ -6,9 +6,9 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     if params[:search].present?
-      @customers = Customer.order(:id).basic_search(params[:search])
+      @customers = Customer.order('id DESC').basic_search(params[:search])
     else
-      @customers = Customer.order(:id).all
+      @customers = Customer.order('id DESC').all
     end
 
     respond_to do |format|
