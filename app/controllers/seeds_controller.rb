@@ -67,7 +67,7 @@ class SeedsController < ApplicationController
 
     respond_to do |format|
       if @seed.update_attributes(params[:seed])
-        format.html { redirect_to @seed, notice: 'Seed was successfully updated.' }
+        format.html { redirect_to edit_seed_path, notice: 'Seed was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

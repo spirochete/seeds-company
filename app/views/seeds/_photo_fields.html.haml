@@ -1,4 +1,8 @@
 .nested-fields
   %h3 Photo
-  = f.input :url
-  = link_to_remove_association "Remove Photo", f
+  - if f.object.new_record?
+    = f.input :photo_url, :as => :file, label: false
+    = link_to_remove_association "> Cancel", f
+  - else
+    = image_tag(f.object.photo_url.url(:thumb))
+    = f.input :_destroy, :as => :boolean, inline_label: "Destroy?", label: false

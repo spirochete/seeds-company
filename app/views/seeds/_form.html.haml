@@ -19,6 +19,12 @@
       = render 'packet_fields', :f => packet
     .links
       = link_to_add_association '> Add New Packet Size', f, :packets
+
+  #photos
+    = f.simple_fields_for :photos, :html => { :multipart => true, :class => 'form-horizontal' } do |photo|
+      = render 'photo_fields', :f => photo
+    .links
+      = link_to_add_association '> Add New Photo', f, :photos
   
   .form-actions
     = f.submit nil
