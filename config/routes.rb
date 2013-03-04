@@ -1,7 +1,10 @@
 Seedcompany::Application.routes.draw do
 
   devise_for :customers
-  devise_for :admins
+
+  devise_for :admins do
+    get 'admins', :to => 'seeds#index', :as => :admin_root # Rails 3
+  end
 
   scope "/admin" do
     resources :customers

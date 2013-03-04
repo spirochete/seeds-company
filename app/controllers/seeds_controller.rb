@@ -1,6 +1,6 @@
 class SeedsController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:index, :show]
+  before_filter :authenticate_admin!
   layout 'admin_layout'
 
   # GET /seeds
