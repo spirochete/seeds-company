@@ -16,7 +16,7 @@ Seedcompany::Application.routes.draw do
     resources :order_items
   end
 
-  root :to => "seeds#index"
+  root :to => "orders#shop"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

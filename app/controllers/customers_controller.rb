@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
 
   before_filter :authenticate_admin!
+  layout 'admin_layout'
 
   # GET /customers
   # GET /customers.json

@@ -18,43 +18,25 @@
 
 
   %body
-    .navbar
-      .navbar-inner
-        %ul.nav
-          %li= link_to "Seeds Company", root_path
-          - if admin_signed_in?
-            %li= link_to current_admin.email, edit_admin_registration_path
-            %li= link_to "Log Out", destroy_admin_session_path, :method => :delete
-          -else
-            %li= link_to "Login", new_admin_session_path
-            %li= link_to "Register Admin", new_admin_registration_path
+    .container.shop
+      .navbar
+        .navbar-inner
+          %ul.nav
+            %li.active= link_to "Seeds Company", root_path
+            - if customer_signed_in?
+              %li= link_to current_customer.email, edit_customer_registration_path
+              %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
+            -else
+              %li= link_to "Login", new_customer_session_path
+              %li= link_to "Register", new_customer_registration_path
 
-    .container
       .row
-        .span3
-          .well.sidebar-nav
-            .nav-header Customers
-            %ul.nav.nav-list
-              %li= link_to "Add New Customer", new_customer_path
-              %li= link_to "Customer List", customers_path
-            .nav-header Seeds
-            %ul.nav.nav-list
-              %li= link_to "Add New Seed", new_seed_path
-              %li= link_to "Seeds List", seeds_path
-        .span9
+        .span4
+        .span4
           = bootstrap_flash
-          - if current_page?(customers_path)
-            = form_tag customers_path, :method => :get do
-              %p.search
-                = text_field_tag :search, params[:search]
-                = submit_tag "Search Customers", :class => :btn
-          -elsif current_page?(seeds_path) || current_page?(root_path)
-            = form_tag seeds_path, :method => :get do
-              %p.search
-                = text_field_tag :search, params[:search]
-                = submit_tag "Search Seeds", :class => :btn
           = yield
-    
+        .span4
+
       %footer
     /
       Javascripts

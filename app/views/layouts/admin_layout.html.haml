@@ -1,0 +1,66 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "Seeds Company"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
+    %link(href="favicon.ico" rel="shortcut icon")
+
+
+  %body
+    .navbar
+      .navbar-inner
+        %ul.nav
+          %li= link_to "Seeds Company", seeds_path
+          - if admin_signed_in?
+            %li= link_to current_admin.email, edit_admin_registration_path
+            %li= link_to "Log Out", destroy_admin_session_path, :method => :delete
+          -else
+            %li= link_to "Login", new_admin_session_path
+            %li= link_to "Register Admin", new_admin_registration_path
+
+    .container
+      .row
+        .span3
+          .well.sidebar-nav
+            .nav-header Shop
+            %ul.nav.nav-list
+              %li= link_to "Front Page", root_path
+            .nav-header Customers
+            %ul.nav.nav-list
+              %li= link_to "Add New Customer", new_customer_path
+              %li= link_to "Customer List", customers_path
+            .nav-header Seeds
+            %ul.nav.nav-list
+              %li= link_to "Add New Seed", new_seed_path
+              %li= link_to "Seeds List", seeds_path
+        .span9
+          = bootstrap_flash
+          - if current_page?(customers_path)
+            = form_tag customers_path, :method => :get do
+              %p.search
+                = text_field_tag :search, params[:search]
+                = submit_tag "Search Customers", :class => :btn
+          -elsif current_page?(seeds_path)
+            = form_tag seeds_path, :method => :get do
+              %p.search
+                = text_field_tag :search, params[:search]
+                = submit_tag "Search Seeds", :class => :btn
+          = yield
+    
+      %footer
+    /
+      Javascripts
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"

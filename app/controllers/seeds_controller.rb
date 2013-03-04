@@ -1,6 +1,7 @@
 class SeedsController < ApplicationController
 
   before_filter :authenticate_admin!, :except => [:index, :show]
+  layout 'admin_layout'
 
   # GET /seeds
   # GET /seeds.json
