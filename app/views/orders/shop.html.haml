@@ -1,0 +1,9 @@
+
+.hero-unit
+  %h1 Seeds Company
+  %p Check out our seeds, man.
+
+- @seeds.each do |seed|
+  %p
+    = seed.variety
+    = seed.common_name

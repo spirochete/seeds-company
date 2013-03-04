@@ -31,11 +31,11 @@
 
     .container
       .row
-        .span3
+        .span3.admin
           .well.sidebar-nav
             .nav-header Shop
             %ul.nav.nav-list
-              %li= link_to "Front Page", root_path
+              %li= link_to "Front Page", root_path, :target => "_new"
             .nav-header Customers
             %ul.nav.nav-list
               %li= link_to "Add New Customer", new_customer_path
@@ -48,12 +48,12 @@
           = bootstrap_flash
           - if current_page?(customers_path)
             = form_tag customers_path, :method => :get do
-              %p.search
+              %p.pull-right.search
                 = text_field_tag :search, params[:search]
                 = submit_tag "Search Customers", :class => :btn
           -elsif current_page?(seeds_path)
             = form_tag seeds_path, :method => :get do
-              %p.search
+              %p.pull-right.search
                 = text_field_tag :search, params[:search]
                 = submit_tag "Search Seeds", :class => :btn
           = yield

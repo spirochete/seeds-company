@@ -6,7 +6,7 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-.span3 { margin-left: 0px; }
+.span3.admin { margin-left: 0px; }
 
 .well.sidebar-nav {
 	padding-left: 5px;
@@ -39,9 +39,8 @@
 	}
 }
 
-p.search {
-	text-align: right;
-	.btn { margin-bottom: 10px; }
+.search {
+	.btn { margin-bottom: 12px; }
 }
 
 .shop { margin-top: 20px; }

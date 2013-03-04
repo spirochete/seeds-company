@@ -2,13 +2,24 @@ class OrdersController < ApplicationController
 
   before_filter :authenticate_customer!, :except => [:index, :show, :shop]
 
+
+  # Front page
+  def shop
+    if params[:search].present?
+      @seeds = Seed.basic_search(params[:search])
+    else
+      @seeds = Seed.all
+    end
+  end
+
+
   # GET /orders
   # GET /orders.json
   def index
     if params[:search].present?
-      @orders = Order.order(:catalog_number).basic_search(params[:search])
+      @orders = Order.order(:id).basic_search(params[:search])
     else
-      @orders = Order.order(:catalog_number).all
+      @orders = Order.order(:id).all
     end
 
     respond_to do |format|
