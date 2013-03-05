@@ -39,11 +39,11 @@
           .well.sidebar-nav
             .nav-header Categories
             %ul.nav.nav-list
-              %li Cover Crops
-              %li Flower
-              %li Fruit
-              %li Grains
-              %li Vegetables
+              %li= link_to "Cover Crops", '/categories/cover+crop'
+              %li= link_to "Flowers", '/categories/flower'
+              %li= link_to "Fruit", '/categories/fruit'
+              %li= link_to "Grains", '/categories/grain'
+              %li= link_to "Vegetable", '/categories/vegetable'
         .span9
           = bootstrap_flash
           = yield

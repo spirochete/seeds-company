@@ -20,6 +20,8 @@ Seedcompany::Application.routes.draw do
   end
 
   root :to => "orders#shop"
+
+  match 'categories/:search' => 'orders#shop'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
