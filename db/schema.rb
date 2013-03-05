@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303042222) do
+ActiveRecord::Schema.define(:version => 20130305014511) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -107,8 +107,10 @@ ActiveRecord::Schema.define(:version => 20130303042222) do
     t.integer  "germination"
     t.integer  "days_to_maturity"
     t.text     "notes"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "featured"
+    t.string   "categories",       :default => [],                 :array => true
   end
 
   create_table "subscriptions", :force => true do |t|

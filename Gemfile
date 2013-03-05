@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.10'
 gem 'psych'
 gem 'pg'
+gem 'postgres_ext'
 gem 'textacular', '~> 3.0', require: 'textacular/rails'
 
 group :assets do

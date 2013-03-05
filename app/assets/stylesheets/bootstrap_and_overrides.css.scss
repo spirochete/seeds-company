@@ -33,6 +33,7 @@
 	padding-left: 15px;
 	padding-bottom: 15px;
 	width: 450px;
+
 	td {
 	  width: 200px;
 	  text-align: center;
@@ -44,3 +45,12 @@
 }
 
 .shop { margin-top: 20px; }
+
+#cats {
+
+	.collection_check_boxes {
+		margin-right: 20px;
+		margin-left: 5px;
+		display: inline;
+	}
+}

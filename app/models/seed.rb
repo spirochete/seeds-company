@@ -6,6 +6,7 @@ class Seed < ActiveRecord::Base
   
   attr_accessible :catalog_number, :common_name, :date_acquired, :days_to_maturity, :genus
   attr_accessible :germination, :notes, :organic, :origin, :seed_type, :species, :sub_species, :variety
+  attr_accessible :featured, :categories
   attr_accessible :packets_attributes
   attr_accessible :photos_attributes
 
