@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-  before_filter :authenticate_customer!, :except => [:index, :show, :shop]
+  before_filter :authenticate_customer!, :except => [:shop, :product]
 
 
   # Front page
@@ -8,7 +8,22 @@ class OrdersController < ApplicationController
     if params[:search].present?
       @seeds = Seed.basic_search(params[:search])
     else
-      @seeds = Seed.all
+      @seeds = Seed.basic_search(featured: true)
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @seeds }
+    end
+  end
+
+  # Seed description
+  def product
+    @seed = Seed.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @seed }
     end
   end
 

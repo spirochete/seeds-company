@@ -1,9 +1,21 @@
 
-.hero-unit
-  %h1 Seeds Company
-  %p Check out our seeds, man.
+- if !params[:search].present?
+  .hero-unit
+    %h1 Seeds Company
+    %p Check out our seeds, man.
 
 - @seeds.each do |seed|
-  %p
-    = seed.variety
-    = seed.common_name
+  .product-block
+    %table
+      %tr
+        - if seed.photos.present?
+          %td.seed-image= image_tag(seed.photos.first.photo_url.url(:thumb))
+        - else
+          %td.seed-image
+        %td.seed-description
+          %p.seed-title= link_to "#{seed.common_name}, #{seed.variety} #{seed.organic ? '(OG)' : ''}", products_url(:id => seed.id)
+          %p
+            %b Type:
+            = seed.seed_type
+          %p
+            = seed.notes

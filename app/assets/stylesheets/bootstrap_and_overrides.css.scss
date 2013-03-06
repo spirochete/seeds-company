@@ -56,3 +56,15 @@ body { background-color: blend-multiply(#7FFFD4, #DEB887); }
 		display: inline;
 	}
 }
+
+.product-block {
+
+	td.seed-image { width: 150px; }
+	td.seed-description { width: 350px; }
+
+	.seed-title { font-size: 1.2em; font-weight: bold; text-decoration: underline; }
+
+	img { height: 96px; width: 96px; }
+
+	table { margin-bottom: 25px; }
+}
