@@ -42,6 +42,8 @@ body { background-color: blend-multiply(#7FFFD4, #DEB887); }
 	}
 }
 
+.hero-unit { h1 + p { margin-top: 10px; }}
+
 .search {
 	.btn { margin-bottom: 12px; }
 }
