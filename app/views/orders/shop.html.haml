@@ -1,8 +1,12 @@
 
-- if !params[:search].present?
+- if !params[:search].present? && !params[:cats].present?
   .hero-unit
     %h1 Seeds Company
     %p Check out our seeds, man.
+- else
+  %p
+    = @seeds.length
+    = @seeds.length == 1 ? 'result' : 'results'
 
 - if @seeds.present?
   .product-block
@@ -19,4 +23,5 @@
               %p
                 %b Type:
                 = seed.seed_type
+              / If the description is too long, cut its length
               %p= seed.notes.length > 200 ? truncate(seed.notes, :length => 200 ) : seed.notes

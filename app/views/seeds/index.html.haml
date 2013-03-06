@@ -11,8 +11,6 @@
       %th Genus
       %th Species
       %th Sub-Species
-      %th Organic?
-      %th Seed Type
       %th Categories
   %tbody
     - @seeds.each do |seed|
@@ -23,8 +21,6 @@
         %td= seed.genus
         %td= seed.species
         %td= seed.sub_species
-        %td= seed.organic
-        %td= seed.seed_type
         %td
           - seed.categories.each do |cat|
             %p= cat

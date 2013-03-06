@@ -21,7 +21,7 @@ Seedcompany::Application.routes.draw do
 
   root :to => "orders#shop"
 
-  match 'categories/:search' => 'orders#shop'
+  match 'categories/:cats' => 'orders#shop'
   match 'products/:id' => 'orders#product', :as => :products
   
   # The priority is based upon order of creation:

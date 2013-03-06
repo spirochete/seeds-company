@@ -3,7 +3,11 @@
   %h3= "#{@seed.common_name}, #{@seed.variety}"
 
 %p
-  %b Name
+  %b Catalog Number:
+  = @seed.catalog_number
+
+%p
+  %b Botanical Name:
   = "#{@seed.genus} #{@seed.species}"
   - if @seed.sub_species?
     = "var. #{@seed.sub_species}"
@@ -53,4 +57,4 @@
       %li
         %b= packet.packet_size
         = "(#{packet.quantity_available})"
-        = " - $#{packet.price}"
+        = " - $#{number_with_precision(packet.price, :precision => 2)}"

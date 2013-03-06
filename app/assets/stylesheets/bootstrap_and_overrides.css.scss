@@ -6,8 +6,6 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-body { background-color: blend-multiply(#7FFFD4, #DEB887); }
-
 .span3.admin { margin-left: 0px; }
 
 .well.sidebar-nav {
@@ -16,7 +14,6 @@ body { background-color: blend-multiply(#7FFFD4, #DEB887); }
 
 	a:hover {
 		color: inherit;
-		background: transparent;
 	}
 
 	ul + div { margin-top: 15px; }
@@ -42,7 +39,9 @@ body { background-color: blend-multiply(#7FFFD4, #DEB887); }
 	}
 }
 
-.hero-unit { h1 + p { margin-top: 10px; }}
+.hero-unit {
+	h1 + p { margin-top: 10px; }
+}
 
 .search {
 	.btn { margin-bottom: 12px; }
@@ -64,9 +63,16 @@ body { background-color: blend-multiply(#7FFFD4, #DEB887); }
 	td.seed-image { width: 150px; }
 	td.seed-description { width: 350px; }
 
-	.seed-title { font-size: 1.2em; font-weight: bold; text-decoration: underline; }
+	.seed-title {
+		font-size: 1.2em;
+		font-weight: bold;
 
-	img { height: 96px; width: 96px; }
+		a:hover {
+			background: darken(#fff, 8%);
+			color: inherit;
+			text-decoration: none;
+		}
+	}
 
 	table { margin-bottom: 25px; }
 }
