@@ -4,6 +4,8 @@
     %h1 Seeds Company
     %p Check out our seeds, man.
 - else
+  - if current_page?(categories_path)
+    %h3= params[:cats].titleize
   %p
     = @seeds.length
     = @seeds.length == 1 ? 'result' : 'results'

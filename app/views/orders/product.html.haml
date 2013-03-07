@@ -6,7 +6,11 @@
   %table.carousel
     %tr
       - @seed.photos.each do |p|
-        %td= link_to image_tag(p.photo_url.url(:thumb)), p.photo_url.url
+        %td.well= link_to image_tag(p.photo_url.url(:thumb)), p.photo_url.url
+
+  .pull-left.well.full-photo
+    = image_tag(@seed.photos.first.photo_url.url)
+
 
 %p
   %b Catalog Number:
@@ -48,9 +52,8 @@
 
 - if !@seed.packets.nil?
   %b Packets Available:
-  %ul
+  %ul.packets-list
     - @seed.packets.each do |packet|
       %li
         %b= packet.packet_size
-        = "(#{packet.quantity_available})"
-        = " - $#{number_with_precision(packet.price, :precision => 2)}"
+        = "(#{packet.quantity_available}) - $#{number_with_precision(packet.price, :precision => 2)}"

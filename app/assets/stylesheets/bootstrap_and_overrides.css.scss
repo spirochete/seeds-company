@@ -89,4 +89,15 @@ body { a:hover { background-color: transparent;} }
 	}
 }
 
-.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background-color:#eee;}
+.full-photo {
+	width: 200px;
+	margin-right: 25px;
+}
+
+.packets-list {
+	margin-top: 10px;
+	margin-left: 300px;
+}
+
+.table-striped tbody>tr:nth-child(even)>td,.table-striped tbody>tr:nth-child(even)>th{background: #eee;}
+.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background: none;}
