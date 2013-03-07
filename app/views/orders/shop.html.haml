@@ -15,7 +15,7 @@
         - @seeds.each do |seed|
           %tr
             - if seed.photos.present?
-              %td.seed-image= image_tag(seed.photos.first.photo_url.url(:thumb))
+              %td.seed-image= link_to image_tag(seed.photos.first.photo_url.url(:thumb)), products_url(:id => seed.id)
             - else
               %td.seed-image
             %td.seed-description
@@ -24,4 +24,4 @@
                 %b Type:
                 = seed.seed_type
               / If the description is too long, cut its length
-              %p= seed.notes.length > 200 ? truncate(seed.notes, :length => 200 ) : seed.notes
+              %p= seed.notes.length > 150 ? truncate(seed.notes, :length => 150 ) : seed.notes

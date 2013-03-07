@@ -1,6 +1,12 @@
 - model_class = Seed
-.page-header
-  %h3= "#{@seed.common_name}, #{@seed.variety}"
+
+%h3= "#{@seed.common_name}, #{@seed.variety}"
+
+- if @seed.photos.present?
+  %table.carousel
+    %tr
+      - @seed.photos.each do |p|
+        %td= link_to image_tag(p.photo_url.url(:thumb)), p.photo_url.url
 
 %p
   %b Catalog Number:
@@ -33,16 +39,6 @@
   %p
     %b Germ:
     = "#{@seed.germination}%"
-
-- if @seed.origin?
-  %p
-    %b Origin:
-    = @seed.origin
-
-- if @seed.date_acquired?
-  %p
-    %b Date Acquired:
-    = @seed.date_acquired
 
 - if @seed.notes?
   %p

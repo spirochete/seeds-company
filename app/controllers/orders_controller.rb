@@ -6,9 +6,9 @@ class OrdersController < ApplicationController
   # Front page
   def shop
     if params[:search].present?
-      @seeds = Seed.basic_search(params[:search])
+      @seeds = Seed.order(:common_name, :variety).basic_search(params[:search])
     elsif params[:cats].present?
-      @seeds = Seed.basic_search(categories: params[:cats])
+      @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats])
     else
       @seeds = Seed.basic_search(featured: true)
     end
