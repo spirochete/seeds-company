@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
         seeds_path
 	  end
 
+	  def after_sign_out_path_for(customers)
+	  	root_path
+	  end
+
 end

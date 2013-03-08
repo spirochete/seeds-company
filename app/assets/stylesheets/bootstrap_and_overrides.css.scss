@@ -6,23 +6,50 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+$dustyRose: #946E49;
+$cream: #EDDBAC;
+$navy: #394042;
+$red: #872A0C;
+$copper: #BA8E3A;
+
 .span3.admin { margin-left: 0px; }
 
-body { a:hover { background-color: transparent;} }
+html, body {
+    background: $cream;
+}
+
+a { color: $red; text-decoration: none; }
+a:hover { color: $red; }
+
+.table th, .table td, .table thead:first-child tr:first-child th { border: 1px solid $navy; }
+.page-header { padding-bottom: 0px; border-bottom: 1px solid $navy}
+#search { background: $cream;}
+
+.navbar-inner {
+	background: $navy;
+	color: $cream;
+	.nav li a { color: $cream; text-shadow: none; }
+	.nav li a:hover { color: $cream; background: lighten($navy, 10%)}
+}
+
+.well { background: lighten($dustyRose, 15%); }
 
 .well.sidebar-nav {
+    padding: 20px;
 	padding-left: 5px;
 	min-height: 200px;
-
-	a:hover {
-		color: inherit;
-	}
+	background: $copper;
+	border: none;
 
 	ul + div { margin-top: 15px; }
 
-	.nav-header { font-size: 1.2em; }
+	.nav-header { color: $navy; text-shadow: none; font-size: 1.3em; }
+	.nav li a { color: $red; text-shadow: none; font-size: 1.1em; }
+	.nav li a:hover { background: $dustyRose; }
 
 }
+
+.form-actions, .alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
 
 .links, .nested-fields {
 	margin-left: 25px;
@@ -43,6 +70,7 @@ body { a:hover { background-color: transparent;} }
 
 .hero-unit {
 	h1 + p { margin-top: 10px; }
+	background: $dustyRose;
 }
 
 .search {
@@ -63,17 +91,11 @@ body { a:hover { background-color: transparent;} }
 .product-block {
 
 	td.seed-image { width: 150px; }
-	td.seed-description { width: 350px; }
+	td.seed-description { width: 350px; text-align: left; }
 
 	.seed-title {
 		font-size: 1.2em;
 		font-weight: bold;
-
-		a:hover {
-			background: darken(#fff, 8%);
-			color: inherit;
-			text-decoration: none;
-		}
 	}
 
 	table { margin-bottom: 25px; }
@@ -99,5 +121,5 @@ body { a:hover { background-color: transparent;} }
 	list-style: none;
 }
 
-.table-striped tbody>tr:nth-child(even)>td,.table-striped tbody>tr:nth-child(even)>th{background: #eee;}
+.table-striped tbody>tr:nth-child(even)>td,.table-striped tbody>tr:nth-child(even)>th{background: none;}
 .table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background: none;}
