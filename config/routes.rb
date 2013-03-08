@@ -23,6 +23,9 @@ Seedcompany::Application.routes.draw do
 
   match 'categories/:cats' => 'orders#shop', :as => :categories
   match 'products/:id' => 'orders#product', :as => :products
+  match 'botanical/:genus/' => 'orders#shop', :as => :genus
+  match 'botanical/:genus/:species' => 'orders#shop', :as => :species
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,6 +9,12 @@ class OrdersController < ApplicationController
       @seeds = Seed.order(:common_name, :variety).basic_search(params[:search])
     elsif params[:cats].present?
       @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats])
+    elsif params[:genus].present?
+      if params[:species].present?
+        @seeds = Seed.order(:common_name, :variety).basic_search(genus: params[:genus], species: params[:species])
+      else
+        @seeds = Seed.order(:common_name, :variety).basic_search(genus: params[:genus])
+      end
     else
       @seeds = Seed.basic_search(featured: true)
     end

@@ -18,8 +18,8 @@
           %tr
             - if seed.photos.present?
               %td.seed-image= link_to image_tag(seed.photos.first.photo_url.url(:thumb)), products_url(:id => seed.id)
-            - else
-              %td.seed-image
+            -else
+              %td.seed-image= link_to image_tag("default.gif"), products_url(:id => seed.id)
             %td.seed-description
               %p.seed-title= link_to "#{seed.common_name}, #{seed.variety} #{seed.organic ? '(OG)' : ''}", products_url(:id => seed.id)
               %p

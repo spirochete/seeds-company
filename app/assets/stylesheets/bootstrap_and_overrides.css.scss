@@ -96,7 +96,7 @@ body { a:hover { background-color: transparent;} }
 
 .packets-list {
 	margin-top: 10px;
-	margin-left: 300px;
+	list-style: none;
 }
 
 .table-striped tbody>tr:nth-child(even)>td,.table-striped tbody>tr:nth-child(even)>th{background: #eee;}
