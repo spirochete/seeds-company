@@ -35,7 +35,7 @@ html, body {
 a { color: $red; text-decoration: none; }
 a:hover { color: $red; }
 
-footer { margin-top: 50px; }
+footer .navbar-inner { margin-top: 50px; padding: 0px; }
 
 
 
@@ -110,7 +110,7 @@ footer { margin-top: 50px; }
 // Browsing product table
 .product-block {
 
-	td.seed-image { width: 150px; vertical-align: middle; }
+	td.seed-image { width: 100px; }
 	td.seed-description { width: 350px; text-align: left; vertical-align: middle; }
 
 	.seed-title {
@@ -118,7 +118,10 @@ footer { margin-top: 50px; }
 		font-weight: bold;
 	}
 
-	.table td { padding: 25px 0; border: 0px; border-bottom: 1px solid $navy; }
+    // hr? what's that?
+	.table tr { border: 0px; border-top: 1px solid $navy; }
+	.table tr:first-child { border: none; }
+	.table td { border: none; padding: 20px 0; }
 }
 
 //###############################
@@ -195,6 +198,7 @@ footer { margin-top: 50px; }
 // Bootstrap disables the top border on the first child.
 .table th, .table td, .table thead:first-child tr:first-child th { border: 1px solid $navy; }
 
+// Change the stripe color from default (#eee)
 .table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background-color: lighten($dustyRose, 20%);}
 
 // Breathing room for h3
