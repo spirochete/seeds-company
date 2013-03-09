@@ -1,28 +1,31 @@
 - model_class = Seed
 .page-header
   %h2 Seeds List
-  
-%table.table.table-striped
-  %thead
-    %tr
-      %th Catalog #
-      %th Common Name
-      %th Variety
-      %th Genus
-      %th Species
-      %th Sub-Species
-      %th Categories
-  %tbody
-    - @seeds.each do |seed|
+
+- if @seeds.present?  
+  %table.table.table-striped
+    %thead
       %tr
-        %td= link_to seed.catalog_number, edit_seed_path(seed)
-        %td= seed.common_name
-        %td= seed.variety
-        %td= seed.genus
-        %td= seed.species
-        %td= seed.sub_species
-        %td
-          - seed.categories.each do |cat|
-            %p= cat
+        %th Catalog #
+        %th Common Name
+        %th Variety
+        %th Genus
+        %th Species
+        %th Sub-Species
+        %th Categories
+    %tbody
+      - @seeds.each do |seed|
+        %tr
+          %td= link_to seed.catalog_number, edit_seed_path(seed)
+          %td= seed.common_name
+          %td= seed.variety
+          %td= seed.genus
+          %td= seed.species
+          %td= seed.sub_species
+          %td
+            - seed.categories.each do |cat|
+              %p= cat
+
+  %p= paginate @seeds
 
 = link_to "Add New Seed Variety", new_seed_path

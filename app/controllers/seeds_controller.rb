@@ -7,11 +7,11 @@ class SeedsController < ApplicationController
     # Front page
   def shop
     if params[:search].present?
-      @seeds = Seed.order(:common_name, :variety).basic_search(params[:search])
+      @seeds = Seed.order(:common_name, :variety).basic_search(params[:search]).page(params[:page])
     elsif params[:cats].present?
-      @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats])
+      @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats]).page(params[:page])
     else
-      @seeds = Seed.basic_search(featured: true)
+      @seeds = Seed.basic_search(featured: true).page(params[:page])
     end
 
     respond_with @seeds
@@ -27,9 +27,9 @@ class SeedsController < ApplicationController
   # GET /seeds.json
   def index
     if params[:search].present?
-      @seeds = Seed.order(:catalog_number).basic_search(params[:search])
+      @seeds = Seed.order(:catalog_number).basic_search(params[:search]).page(params[:page])
     else
-      @seeds = Seed.order(:catalog_number).all
+      @seeds = Seed.order(:catalog_number).page params[:page]
     end
 
     respond_to do |format|

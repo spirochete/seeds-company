@@ -6,7 +6,7 @@
   %table.carousel
     %tr
       - @seed.photos.each do |p|
-        %td.well.thumbs= image_tag(p.photo_url.url(:thumb))
+        %td.thumbs= image_tag(p.photo_url.url(:thumb))
 
   .pull-left.well.full-photo
     = image_tag(@seed.photos.first.photo_url.url)

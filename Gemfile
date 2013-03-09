@@ -21,3 +21,9 @@ gem 'country_select'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end

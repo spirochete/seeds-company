@@ -91,7 +91,7 @@ h1, h3 { color: $navy; }
 
 	.nav-header { color: $navy; text-shadow: none; font-size: 1.3em; margin-bottom: 5px; }
 	.nav li a { color: $red; text-shadow: none; font-size: 1.2em; }
-	.nav li a:hover { background: $dustyRose; }
+	.nav li a:hover { background: none; }
 }
 
 
@@ -139,6 +139,7 @@ h1, h3 { color: $navy; }
 //###############################
 //	Single Product Display
 //###############################
+
 // Main photo displayed on single product page
 .full-photo {
 	width: 200px;
@@ -149,9 +150,11 @@ h1, h3 { color: $navy; }
 // Thumbnails on single product page
 .thumbs {
 	background: lighten($dustyRose, 15%);
-	width: 135px;
+	width: 96px;
 	text-align: center;
 	padding: 10px;
+
+	img { width: 64px; height: 64px; }
 }
 
 // Packet list display on single product page
@@ -159,6 +162,7 @@ h1, h3 { color: $navy; }
 	margin-top: 10px;
 	list-style: none;
 }
+
 //###############################
 //	End of Single Product Display
 //###############################

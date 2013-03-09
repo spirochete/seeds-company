@@ -2,7 +2,7 @@
 .page-header
   %h2 Customer List
 
-- if !@customers.nil?
+- if @customers.present?
   %table.table.table-striped
     %thead
       %tr
@@ -19,5 +19,6 @@
           %td= c.email
           %td= c.phone_number
           %td= "#{c.city}, #{c.state_province} (#{c.country})"
+  %p= paginate(@customers)
 
 = link_to "Add New Customer", new_customer_path
