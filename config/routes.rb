@@ -1,14 +1,18 @@
 Seedcompany::Application.routes.draw do
 
   devise_for :customers
+  devise_for :admins
 
-  devise_for :admins do
+  devise_scope :admins do
     get 'admins', :to => 'seeds#index', :as => :admin_root # Rails 3
   end
 
   scope "/admin" do
     resources :customers
   end
+
+
+  match 'products/:id' => 'seeds#product', :as => :products
 
   resources :seeds do
     resources :photos
@@ -19,12 +23,7 @@ Seedcompany::Application.routes.draw do
     resources :order_items
   end
 
-  root :to => "orders#shop"
-
-  match 'categories/:cats' => 'orders#shop', :as => :categories
-  match 'products/:id' => 'orders#product', :as => :products
-  match 'botanical/:genus/' => 'orders#shop', :as => :genus
-  match 'botanical/:genus/:species' => 'orders#shop', :as => :species
+  root :to => 'seeds#shop'
 
   
   # The priority is based upon order of creation:

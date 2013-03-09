@@ -1,7 +1,27 @@
 class SeedsController < ApplicationController
 
-  before_filter :authenticate_admin!
-  layout 'admin_layout'
+  before_filter :authenticate_admin!, :except => [:shop, :product]
+  layout 'admin_layout', :except => [:shop, :product]
+  respond_to :html, :xml
+
+    # Front page
+  def shop
+    if params[:search].present?
+      @seeds = Seed.order(:common_name, :variety).basic_search(params[:search])
+    elsif params[:cats].present?
+      @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats])
+    else
+      @seeds = Seed.basic_search(featured: true)
+    end
+
+    respond_with @seeds
+  end
+
+  # Seed description
+  def product
+    @seed = Seed.find(params[:id])
+    respond_with @seed
+  end
 
   # GET /seeds
   # GET /seeds.json

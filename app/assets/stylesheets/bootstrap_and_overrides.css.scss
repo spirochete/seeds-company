@@ -30,12 +30,16 @@ $copper: #BA8E3A;
 
 html, body {
     background: $cream;
+    color: $navy;
 }
 
 a { color: $red; text-decoration: none; }
 a:hover { color: $red; }
 
-footer .navbar-inner { margin-top: 50px; padding: 0px; }
+footer .navbar-inner { margin-top: 50px; padding-top: 15px; }
+footer ul { list-style: none; }
+
+h1, h3 { color: $navy; }
 
 
 
@@ -175,7 +179,7 @@ footer .navbar-inner { margin-top: 50px; padding: 0px; }
 }
 
 .nested-fields {
-	border: 1px solid #c0c0c0;
+	border: 1px solid $navy;
 	padding-left: 15px;
 	padding-bottom: 15px;
 	width: 450px;

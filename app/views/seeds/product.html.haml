@@ -1,0 +1,59 @@
+- model_class = Seed
+
+%h3= "#{@seed.common_name}, #{@seed.variety}"
+
+- if @seed.photos.present?
+  %table.carousel
+    %tr
+      - @seed.photos.each do |p|
+        %td.well.thumbs= image_tag(p.photo_url.url(:thumb))
+
+  .pull-left.well.full-photo
+    = image_tag(@seed.photos.first.photo_url.url)
+
+
+%p
+  %b Catalog Number:
+  = @seed.catalog_number
+
+%p
+  %b Botanical Name:
+  = "#{@seed.genus} #{@seed.species}"
+  - if @seed.sub_species?
+    = "var. #{@seed.sub_species}"
+
+%p
+  %b Organic:
+  - if @seed.organic?
+    = "Yes"
+  - else
+    = "No"
+
+- if @seed.seed_type?
+  %p
+    %b Type:
+    = @seed.seed_type
+
+- if @seed.days_to_maturity?
+  %p
+    %b Days to maturity:
+    = @seed.days_to_maturity
+
+- if @seed.germination?
+  %p
+    %b Germ:
+    = "#{@seed.germination}%"
+
+- if @seed.notes?
+  %p
+    %b Notes:
+    = @seed.notes
+
+
+- if !@seed.packets.nil?
+  %b Packets Available:
+  %ul.packets-list
+    - @seed.packets.each do |packet|
+      %li
+        %b= packet.packet_size
+        = "(#{packet.quantity_available}) - $#{number_with_precision(packet.price, :precision => 2)}"

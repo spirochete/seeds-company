@@ -1,34 +1,7 @@
 class OrdersController < ApplicationController
 
-  before_filter :authenticate_customer!, :except => [:shop, :product]
+  before_filter :authenticate_customer!
   respond_to :html, :xml
-
-
-  # Front page
-  def shop
-    if params[:search].present?
-      @seeds = Seed.order(:common_name, :variety).basic_search(params[:search])
-    elsif params[:cats].present?
-      @seeds = Seed.order(:common_name, :variety).basic_search(categories: params[:cats])
-    elsif params[:genus].present?
-      if params[:species].present?
-        @seeds = Seed.order(:common_name, :variety).basic_search(genus: params[:genus], species: params[:species])
-      else
-        @seeds = Seed.order(:common_name, :variety).basic_search(genus: params[:genus])
-      end
-    else
-      @seeds = Seed.basic_search(featured: true)
-    end
-
-    respond_with @seeds
-  end
-
-  # Seed description
-  def product
-    @seed = Seed.find(params[:id])
-    respond_with @seed
-  end
-
 
   # GET /orders
   # GET /orders.json

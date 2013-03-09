@@ -32,6 +32,7 @@
 
           = form_tag root_path, :method => :get do
             %p.navbar-search.pull-right
+              %i.icon-search
               = text_field_tag :search, params[:search], :class => "search-query", :placeholder => "Search"
 
       .row
@@ -39,11 +40,13 @@
           .well.sidebar-nav
             .nav-header Categories
             %ul.nav.nav-list
-              %li= link_to "Cover Crops", '/categories/cover crops'
-              %li= link_to "Flowers", '/categories/flowers'
-              %li= link_to "Fruit", '/categories/fruits'
-              %li= link_to "Grains", '/categories/grains'
-              %li= link_to "Vegetables", '/categories/vegetables'
+              %li= link_to "Cover Crops", root_path(:cats => "cover crops")
+              %li= link_to "Flowers", root_path(:cats => "flowers")
+              %li= link_to "Fruit", root_path(:cats => "fruits")
+              %li= link_to "Grains", root_path(:cats => "grains")
+              %li= link_to "Vegetables", root_path(:cats => "vegetables")
+            %ul.nav.nav-list
+              %li= link_to "Open-Pollinated", root_path(:search => "open-pollinated")
         .span9
           = bootstrap_flash
           = yield
@@ -51,8 +54,9 @@
       %footer
         .navbar
           .navbar-inner
-            %ul.nav
+            %ul.pull-right
               %li
+                %i.icon-twitter
     /
       Javascripts
       \==================================================
