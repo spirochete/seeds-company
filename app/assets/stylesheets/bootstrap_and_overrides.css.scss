@@ -6,13 +6,27 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+
+
+
+
+//###############################
+//	The colors, man
+//###############################
+
 $dustyRose: #946E49;
 $cream: #EDDBAC;
 $navy: #394042;
 $red: #872A0C;
 $copper: #BA8E3A;
 
-.span3.admin { margin-left: 0px; }
+//###############################
+//	End of colors
+//###############################
+
+
+
+
 
 html, body {
     background: $cream;
@@ -21,35 +35,136 @@ html, body {
 a { color: $red; text-decoration: none; }
 a:hover { color: $red; }
 
-.table th, .table td, .table thead:first-child tr:first-child th { border: 1px solid $navy; }
-.page-header { padding-bottom: 0px; border-bottom: 1px solid $navy}
-#search { background: $cream;}
+footer { margin-top: 50px; }
+
+
+
+
+
+//###############################
+//	Top Navigation
+//###############################
 
 .navbar-inner {
 	background: $navy;
 	color: $cream;
 	.nav li a { color: $cream; text-shadow: none; }
 	.nav li a:hover { color: $cream; background: lighten($navy, 10%)}
+
+	padding-top: 5px;
+	font-size: 1.25em;
+
+	.navbar-search {
+	    margin-top: 3px;
+
+	    #search {
+	    	background: $cream;
+	    	border-radius: 10px;
+	    }
+
+        // In Chrome, placeholder is too damn high.
+		::-webkit-input-placeholder {
+	    	padding-top: 5px;
+	    }
+	}
 }
 
-.well { background: lighten($dustyRose, 15%); }
+//###############################
+//	End of Top Navigation
+//###############################
 
-.well.sidebar-nav {
+
+
+
+
+.sidebar-nav {
     padding: 20px;
-	padding-left: 5px;
 	min-height: 200px;
 	background: $copper;
 	border: none;
 
 	ul + div { margin-top: 15px; }
 
-	.nav-header { color: $navy; text-shadow: none; font-size: 1.3em; }
-	.nav li a { color: $red; text-shadow: none; font-size: 1.1em; }
+	.nav-header { color: $navy; text-shadow: none; font-size: 1.3em; margin-bottom: 5px; }
+	.nav li a { color: $red; text-shadow: none; font-size: 1.2em; }
 	.nav li a:hover { background: $dustyRose; }
-
 }
 
-.form-actions, .alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
+
+
+
+
+//###############################
+//	Storefront Display
+//###############################
+
+.hero-unit {
+	h1 + p { margin-top: 10px; }
+	background: $dustyRose;
+}
+
+.shop { margin-top: 20px; }
+
+
+
+// Browsing product table
+.product-block {
+
+	td.seed-image { width: 150px; vertical-align: middle; }
+	td.seed-description { width: 350px; text-align: left; vertical-align: middle; }
+
+	.seed-title {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	.table td { padding: 25px 0; border: 0px; border-bottom: 1px solid $navy; }
+}
+
+//###############################
+//	End of Storefront Display
+//###############################
+
+
+
+
+
+//###############################
+//	Single Product Display
+//###############################
+// Main photo displayed on single product page
+.full-photo {
+	width: 200px;
+	margin-right: 25px;
+	background: lighten($dustyRose, 15%);
+}
+
+// Thumbnails on single product page
+.thumbs {
+	background: lighten($dustyRose, 15%);
+	width: 135px;
+	text-align: center;
+	padding: 10px;
+}
+
+// Packet list display on single product page
+.packets-list {
+	margin-top: 10px;
+	list-style: none;
+}
+//###############################
+//	End of Single Product Display
+//###############################
+
+
+
+
+
+//###############################
+//	Seeds Admin
+//###############################
+
+.span3.admin { margin-left: 0px; }
 
 .links, .nested-fields {
 	margin-left: 25px;
@@ -68,17 +183,6 @@ a:hover { color: $red; }
 	}
 }
 
-.hero-unit {
-	h1 + p { margin-top: 10px; }
-	background: $dustyRose;
-}
-
-.search {
-	.btn { margin-bottom: 12px; }
-}
-
-.shop { margin-top: 20px; }
-
 #cats {
 
 	.collection_check_boxes {
@@ -88,38 +192,32 @@ a:hover { color: $red; }
 	}
 }
 
-.product-block {
+// Bootstrap disables the top border on the first child.
+.table th, .table td, .table thead:first-child tr:first-child th { border: 1px solid $navy; }
 
-	td.seed-image { width: 150px; }
-	td.seed-description { width: 350px; text-align: left; }
+.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background-color: lighten($dustyRose, 20%);}
 
-	.seed-title {
-		font-size: 1.2em;
-		font-weight: bold;
-	}
+// Breathing room for h3
+.page-header { padding-bottom: 0px; border-bottom: 1px solid $navy}
 
-	table { margin-bottom: 25px; }
-	.table td { border: 0px; }
-}
+//###############################
+//	End of Seeds Admin
+//###############################
 
-.carousel {
- 
-    td {
-		width: 135px;
-		text-align: center;
-		padding: 10px;
-	}
-}
 
-.full-photo {
-	width: 200px;
-	margin-right: 25px;
-}
 
-.packets-list {
-	margin-top: 10px;
-	list-style: none;
-}
 
-.table-striped tbody>tr:nth-child(even)>td,.table-striped tbody>tr:nth-child(even)>th{background: none;}
-.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background: none;}
+
+//#########################
+//  Quirks (oh gods, why)
+//#########################
+
+// Correcting webkit nonsense for flash[:notice] and form buttons
+.form-actions, .alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
+.alert { padding-top: 10px; vertical-align: middle; }
+.form-actions .btn { padding-top: 6px; }
+button { margin-top: 3px; }
+
+//############################
+// End of Quirks (so you say)
+//############################

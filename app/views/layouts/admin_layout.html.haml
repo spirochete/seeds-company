@@ -21,6 +21,7 @@
     .navbar
       .navbar-inner
         %ul.nav
+          %li= link_to "Admin", seeds_path
           - if admin_signed_in?
             %li= link_to current_admin.email, edit_admin_registration_path
             %li= link_to "Log Out", destroy_admin_session_path, :method => :delete
