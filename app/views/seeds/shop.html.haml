@@ -2,10 +2,14 @@
 - if !params[:search].present? && !params[:cats].present?
   .hero-unit
     %h1 Seeds Company
-    %p Check out our seeds, man.
+    %p Broadcasting live
 - else
   - if params[:cats].present?
     %h3= params[:cats].titleize
+  - elsif params[:search].present?
+    %h3
+      = "results for: "
+      %i= params[:search]
   %p
     = @seeds.length
     = @seeds.length == 1 ? 'result' : 'results'

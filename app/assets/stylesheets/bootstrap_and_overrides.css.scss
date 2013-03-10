@@ -52,8 +52,9 @@ h1, h3 { color: $navy; }
 .navbar-inner {
 	background: $navy;
 	color: $cream;
+	.nav li:first-child a { padding-left: 0px; }
 	.nav li a { color: $cream; text-shadow: none; }
-	.nav li a:hover { color: $cream; background: lighten($navy, 10%)}
+	.nav li a:hover { color: $cream; background: none; }
 
 	padding-top: 5px;
 	font-size: 1.25em;
@@ -89,8 +90,14 @@ h1, h3 { color: $navy; }
 
 	ul + div { margin-top: 15px; }
 
-	.nav-header { color: $navy; text-shadow: none; font-size: 1.3em; margin-bottom: 5px; }
-	.nav li a { color: $red; text-shadow: none; font-size: 1.2em; }
+	.nav-header {
+		color: $navy;
+		text-shadow: none;
+		font-size: 1.3em;
+		margin-bottom: 5px;
+		padding-left: 0px;
+	}
+	.nav li a { color: $red; text-shadow: none; font-size: 1.2em; padding-left: 0px; }
 	.nav li a:hover { background: none; }
 }
 
@@ -203,6 +210,9 @@ h1, h3 { color: $navy; }
 	}
 }
 
+// Bootstrap doesn't like to align inline buttons.
+.search .btn { margin-bottom: 10px; }
+
 // Bootstrap disables the top border on the first child.
 .table th, .table td, .table thead:first-child tr:first-child th { border: 1px solid $navy; }
 
@@ -225,10 +235,12 @@ h1, h3 { color: $navy; }
 //#########################
 
 // Correcting webkit nonsense for flash[:notice] and form buttons
-.form-actions, .alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
+.alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
 .alert { padding-top: 10px; vertical-align: middle; }
 .form-actions .btn { padding-top: 6px; }
-button { margin-top: 3px; }
+
+// Get rid of Devise's #eee background around submit buttons
+.form-actions { background: none; margin-top: 0px; }
 
 //############################
 // End of Quirks (so you say)
