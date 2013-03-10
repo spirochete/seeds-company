@@ -2,7 +2,7 @@ Seeds Company
 =============
 
 This is a Rails app for managing a seed bank (cataloguing and distribution).
-Currently, the catalogue and storefront are up. I'm currently working on
+Currently, the catalogue and storefront are up. I'm working on
 integration with Active Merchant.
 
 Why?
@@ -10,7 +10,7 @@ Why?
 
 I noticed that many seeds companies and distributors are using antiquated and/or obfuscated applications for managing
 their collections (e.g. the USDA's <a href="http://www.ars-grin.gov/npgs/aboutgrin.html">GRIN</a>, and Fedco Seeds).
-Still more collections aren't even digitized. By creating this, I hope to give seed savers a free, simple way to organize their collections.
+Still more collections aren't even digitized. By creating this, I hope to give seed savers a free, simple way to catalogue.
 
 Getting Started
 ---------------
