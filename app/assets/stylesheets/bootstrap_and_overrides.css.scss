@@ -150,16 +150,17 @@ h1, h3 { color: $navy; }
 // Main photo displayed on single product page
 .full-photo {
 	width: 200px;
-	margin-right: 25px;
+	margin-right: 10px;
+	margin-left: 5px;
 	background: lighten($dustyRose, 15%);
 }
 
 // Thumbnails on single product page
 .thumbs {
 	background: lighten($dustyRose, 15%);
-	width: 96px;
 	text-align: center;
 	padding: 10px;
+	margin-bottom: 5px;
 
 	img { width: 64px; height: 64px; }
 }

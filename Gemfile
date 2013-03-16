@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.10'
-gem 'psych'
+gem 'psych', '1.3.4'
 gem 'pg'
 gem 'postgres_ext'
 gem 'textacular', '~> 3.0', require: 'textacular/rails'
@@ -22,6 +22,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'carter'
+gem 'state_machine'
 
 group :development do
   gem 'better_errors'
