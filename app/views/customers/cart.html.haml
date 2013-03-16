@@ -1,4 +1,14 @@
-%p=@order.id
+%h3 Shopping Cart
 
-- @order.order_items.each do |oi|
-  %p=oi.cost
+- if @order.order_items.present?
+  %table.cart.table-striped
+    %tr
+      %th Item
+      %th Price
+      %th Quantity
+
+    - @order.order_items.each do |oi|
+      %tr
+        %td= oi.get_packet_name
+        %td= oi.cost
+        %td= oi.quantity

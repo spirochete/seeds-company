@@ -14,6 +14,7 @@ Seedcompany::Application.routes.draw do
 
   match 'products/:id' => 'seeds#product', :as => :products
   match 'cart' => 'customers#cart', :as => :cart
+  match 'add' => 'customers#add_item', :as => :add_item
 
   resources :seeds do
     resources :photos

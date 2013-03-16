@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305014511) do
+ActiveRecord::Schema.define(:version => 20130316182124) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20130305014511) do
     t.integer  "order_id"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.integer  "packet_id"
   end
 
   add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"

@@ -1,10 +1,27 @@
 class CustomersController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:cart]
-  layout 'admin_layout', :except => [:cart]
+  before_filter :authenticate_admin!, :except => [:cart, :add_item]
+  layout 'admin_layout', :except => [:cart, :add_item]
+
+  def add_item
+    @customer = Customer.find(params[:customer])
+    @order = Order.basic_search(:customer_id => @customer.id).first
+    if @order.nil?
+      @order = @customer.orders.build
+      @order.save
+    end
+
+    @packet = Packet.find(params[:packet])
+
+    @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => 1)
+    @oi.save
+
+    redirect_to cart_path(:customer => @customer)
+
+  end
 
   def cart
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find(params[:customer])
     @order = Order.basic_search(:customer_id => @customer.id).first
     if @order.nil?
       @order = @customer.orders.build

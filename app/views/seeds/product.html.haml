@@ -56,3 +56,4 @@
         %li
           %b= packet.packet_size
           = "(#{packet.quantity_available}) - $#{number_with_precision(packet.price, :precision => 2)}"
+          = link_to "add", add_item_path(:customer => current_customer, :packet => packet)
