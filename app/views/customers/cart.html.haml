@@ -6,9 +6,11 @@
       %th Item
       %th Price
       %th Quantity
+      %th
 
     - @order.order_items.each do |oi|
       %tr
         %td= oi.get_packet_name
         %td= oi.cost
         %td= oi.quantity
+        %td= link_to "remove", remove_item_path(:order_item => oi)

@@ -240,10 +240,10 @@ h1, h3 { color: $navy; }
 // Correcting webkit nonsense for flash[:notice] and form buttons
 .alert { background: lighten($dustyRose, 10%); color: $navy; text-shadow: none; }
 .alert { padding-top: 10px; vertical-align: middle; }
-.form-actions .btn { padding-top: 6px; }
+.form-actions .btn { padding-top: 6px; background: $cream; }
 
 // Get rid of Devise's #eee background around submit buttons
-.form-actions { background: none; margin-top: 0px; }
+.form-actions { background: $dustyRose; margin-top: 0px; }
 
 //############################
 // End of Quirks (so you say)

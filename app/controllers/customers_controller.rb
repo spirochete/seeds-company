@@ -20,6 +20,15 @@ class CustomersController < ApplicationController
 
   end
 
+  def remove_item
+    @orderItem = OrderItem.find(params[:order_item])
+    @orderItem.destroy
+
+    redirect_to cart_path(:customer => current_customer)
+
+  end
+
+
   def cart
     @customer = Customer.find(params[:customer])
     @order = Order.basic_search(:customer_id => @customer.id).first
