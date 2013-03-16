@@ -1,7 +1,21 @@
 class CustomersController < ApplicationController
 
-  before_filter :authenticate_admin!
-  layout 'admin_layout'
+  before_filter :authenticate_admin!, :except => [:cart]
+  layout 'admin_layout', :except => [:cart]
+
+  def cart
+    @customer = Customer.find(params[:id])
+    @order = Order.basic_search(:customer_id => @customer.id).first
+    if @order.nil?
+      @order = @customer.orders.build
+      @order.save
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @order }
+    end
+  end
 
   # GET /customers
   # GET /customers.json

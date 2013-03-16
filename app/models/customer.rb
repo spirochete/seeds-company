@@ -16,4 +16,7 @@ class Customer < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :address_one, :city, :state_province, :country, :postal_code, :phone_number
 
+  accepts_nested_attributes_for :orders
+  attr_accessible :orders_attributes
+
 end

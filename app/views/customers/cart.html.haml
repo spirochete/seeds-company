@@ -1,0 +1,4 @@
+%p=@order.id
+
+- @order.order_items.each do |oi|
+  %p=oi.cost
