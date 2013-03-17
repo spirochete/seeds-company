@@ -18,9 +18,10 @@ Getting Started
 You'll need Ruby 1.9.3 or higher, and PostgreSQL.
 
 ```ruby
-1. bundle
-2. bundle exec rake db:create:all
-3. bundle exec rake db:migrate
+1. git clone https://github.com/spirochete/seeds-company.git
+2. bundle
+3. bundle exec rake db:create:all
+4. bundle exec rake db:migrate
 ```
 
 For customer management, you'll want to configure your mailer settings. See more on this at <a href="https://github.com/plataformatec/devise">Devise</a>.
@@ -29,7 +30,7 @@ For customer management, you'll want to configure your mailer settings. See more
 Basic Usage
 -----------
 
-All set up? Good. Now register an admin and add a seed.
+Navigate to http://yourhostname/seeds.  Register an admin and add a seed.
 
 Adding a seed requires pretty minimal information, like the common name and variety of the plant (e.g. Tomato, Peacevine, respectively). You can also add botanical information like genus, species, and sub-species. For your records, you might add information about how you acquired the material. For all else, you can use the notes field. If there are particular fields that you would like to see standardized/searchable, let me know.
 
