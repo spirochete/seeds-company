@@ -39,9 +39,6 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    cells (3.8.8)
-      actionpack (>= 3.0)
-      railties (>= 3.0)
     cocoon (1.1.2)
     coderay (1.0.9)
     coffee-rails (3.2.2)
@@ -85,6 +82,12 @@ GEM
     mime-types (1.21)
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
+    money (5.1.1)
+      i18n (~> 0.6.0)
+    money-rails (0.8.0)
+      activesupport (>= 3.0)
+      money (~> 5.1.0)
+      railties (>= 3.0)
     multi_json (1.6.1)
     orm_adapter (0.4.0)
     pg (0.14.1)
@@ -158,7 +161,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   carrierwave
-  cells
   cocoon
   coffee-rails (~> 3.2.1)
   country_select
@@ -167,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick
+  money-rails
   pg
   postgres_ext
   psych (= 1.3.4)

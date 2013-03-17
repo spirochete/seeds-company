@@ -1,6 +1,7 @@
 class OrderItem < ActiveRecord::Base
   belongs_to :order
   has_many :packets
+
   attr_accessible :cost, :quantity, :packet_id
   attr_accessible :packets_attributes
 

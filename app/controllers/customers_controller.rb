@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:cart, :add_item]
-  layout 'admin_layout', :except => [:cart, :add_item]
+  before_filter :authenticate_admin!, :except => [:cart, :add_item, :remove_item]
+  layout 'admin_layout', :except => [:cart, :add_item, :remove_item]
 
   def add_item
     @customer = Customer.find(params[:customer])
@@ -12,9 +12,14 @@ class CustomersController < ApplicationController
     end
 
     @packet = Packet.find(params[:packet])
-
-    @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => 1)
-    @oi.save
+    @oi = OrderItem.basic_search(:packet_id => @packet.id, :order_id => @order.id).first
+    if @oi.nil?
+      @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => 1)
+      @oi.save
+    else
+      @oi.quantity += 1
+      @oi.save
+    end
 
     redirect_to cart_path(:customer => @customer)
 

@@ -22,7 +22,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
-gem 'cells'
+gem 'money-rails'
+
 
 group :development do
   gem 'better_errors'

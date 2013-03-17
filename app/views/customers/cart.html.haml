@@ -11,6 +11,6 @@
     - @order.order_items.each do |oi|
       %tr
         %td= oi.get_packet_name
-        %td= oi.cost
+        %td= number_with_precision(oi.cost, :precision => 2)
         %td= oi.quantity
         %td= link_to "remove", remove_item_path(:order_item => oi)
