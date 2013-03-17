@@ -26,7 +26,7 @@
             - if customer_signed_in?
               %li= link_to current_customer.email, edit_customer_registration_path
               %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
-              %li= link_to "Cart", cart_path(:customer => current_customer)
+              %li= link_to "Cart", "/cart"
             -else
               %li= link_to "Login", new_customer_session_path
               %li= link_to "Register", new_customer_registration_path
@@ -46,6 +46,7 @@
               %li= link_to "Flowers", root_path(:cats => "flowers")
               %li= link_to "Fruit", root_path(:cats => "fruits")
               %li= link_to "Grains", root_path(:cats => "grains")
+              %li= link_to "Herbs", root_path(:cats => "herbs")
               %li= link_to "Vegetables", root_path(:cats => "vegetables")
             %ul.nav.nav-list
               %li= link_to "Open-Pollinated", root_path(:search => "open-pollinated")

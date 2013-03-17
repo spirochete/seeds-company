@@ -1,16 +1,24 @@
 %h3 Shopping Cart
 
-- if @order.order_items.present?
-  %table.cart.table-striped
-    %tr
-      %th Item
-      %th Price
-      %th Quantity
-      %th
-
-    - @order.order_items.each do |oi|
+- if @order
+  - if @order.order_items.present?
+    %table.cart.table-striped
       %tr
-        %td= oi.get_packet_name
-        %td= number_with_precision(oi.cost, :precision => 2)
-        %td= oi.quantity
-        %td= link_to "remove", remove_item_path(:order_item => oi)
+        %th Item
+        %th Price
+        %th Quantity
+        %th
+
+      - @order.order_items.each do |oi|
+        %tr
+          %td= oi.get_packet_name
+          %td= number_with_precision(oi.cost, :precision => 2)
+          %td
+            = form_for "", :html => { :class => "what" }, :url => { :controller => 'customers', :action => 'update_item'} do |f|
+              = f.text_field :quantity, :class => "uq", :name => "quantity", :id => "quantity", :value => oi.quantity
+              = f.hidden_field :order_item, :class => "uq", :name => "order_item", :id => "order_item", :value => oi.id
+          %td= link_to "remove", remove_item_path(:order_item => oi)
+  %br
+  %div= link_to "Empty Cart", empty_cart_path(:order => @order), :confirm => "Are you sure you want to empty your cart?"
+- else
+  %p Your cart is currently empty.

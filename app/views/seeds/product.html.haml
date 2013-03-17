@@ -21,16 +21,18 @@
     - if @seed.sub_species?
       = "var. #{@seed.sub_species}"
 
-  %p
-    %b Organic:
-    - if @seed.organic?
-      = "Yes"
-    - else
-      = "No"
+  - if @seed.pinyin
+    %p
+      %b Pinyin
+      = @seed.pinyin
+
+  - if @seed.organic?
+    %p
+      %b Organic &#x2713;
 
   - if @seed.seed_type?
     %p
-      %b Type:
+      %b Seed Type:
       = @seed.seed_type
 
   - if @seed.days_to_maturity?

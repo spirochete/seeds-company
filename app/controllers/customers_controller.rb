@@ -1,13 +1,14 @@
 class CustomersController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:cart, :add_item, :remove_item]
-  layout 'admin_layout', :except => [:cart, :add_item, :remove_item]
+  before_filter :authenticate_admin!, :except => [:cart, :add_item, :remove_item, :update_item, :empty_cart]
+  layout 'admin_layout', :except => [:cart, :add_item, :remove_item, :update_item, :empty_cart]
 
   def add_item
-    @customer = Customer.find(params[:customer])
+    @customer = current_customer
     @order = Order.basic_search(:customer_id => @customer.id).first
     if @order.nil?
       @order = @customer.orders.build
+      @order.order_status = "CART"
       @order.save
     end
 
@@ -23,7 +24,7 @@ class CustomersController < ApplicationController
       @oi.save
     end
 
-    redirect_to cart_path(:customer => @customer)
+    redirect_to "/cart"
 
   end
 
@@ -31,18 +32,31 @@ class CustomersController < ApplicationController
     @orderItem = OrderItem.find(params[:order_item])
     @orderItem.destroy
 
-    redirect_to cart_path(:customer => current_customer)
+    redirect_to "/cart"
 
+  end
+
+  def update_item
+    @orderItem = OrderItem.find(params[:order_item])
+    @orderItem.update_attributes(:quantity => params[:quantity])
+
+    respond_to do |format|
+      format.html { redirect_to "/cart", notice: "Cart was updated." }
+    end
+
+  end
+
+  def empty_cart
+    @order = Order.find(params[:order])
+    if @order.destroy
+      redirect_to "/cart", notice: "Cart was emptied."
+    end
   end
 
 
   def cart
-    @customer = Customer.find(params[:customer])
+    @customer = current_customer
     @order = Order.basic_search(:customer_id => @customer.id).first
-    if @order.nil?
-      @order = @customer.orders.build
-      @order.save
-    end
 
     respond_to do |format|
       format.html

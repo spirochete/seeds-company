@@ -8,6 +8,11 @@
   - if @seed.sub_species?
     = "var. #{@seed.sub_species}"
 
+- if @seed.pinyin
+  %p
+    %b Pinyin
+    = @seed.pinyin 
+
 %p
   %b Organic:
   - if @seed.organic?

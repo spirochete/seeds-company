@@ -25,10 +25,12 @@
             -else
               %td.seed-image= link_to image_tag("default.png"), products_url(:id => seed.id)
             %td.seed-description
-              %p.seed-title= link_to "#{seed.common_name}, #{seed.variety} #{seed.organic ? '(OG)' : ''}", products_url(:id => seed.id)
+              %p.seed-title= link_to "#{seed.common_name}, #{seed.variety}", products_url(:id => seed.id)
               %p
-                %b Type:
+                %i= seed.pinyin
+              %p
                 = seed.seed_type
-              / If the description is too long, cut its length
+                = seed.organic ? "OG" : nil
+              // If the description is too long, cut its length
               %p= seed.notes.length > 150 ? truncate(seed.notes, :length => 150 ) : seed.notes
   %p= paginate @seeds

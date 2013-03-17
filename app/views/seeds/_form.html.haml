@@ -6,6 +6,7 @@
   = f.input :genus    
   = f.input :species 
   = f.input :sub_species
+  = f.input :pinyin
   = f.input :organic
   = f.input :seed_type
   = f.input :origin
@@ -16,7 +17,7 @@
   = f.input :notes, as: :text, :input_html => { :size => "100x10" }
   #cats.nested-fields
     %h3 Categories
-    = f.collection_check_boxes :categories, %w[cover\ crop flower fruit grain vegetable], :to_s, :to_s
+    = f.collection_check_boxes :categories, %w[cover\ crop flower fruit grain herb vegetable], :to_s, :to_s
   #packets
     = f.simple_fields_for :packets, :html => { :class => 'form-horizontal' } do |packet|
       = render 'packet_fields', :f => packet

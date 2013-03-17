@@ -16,6 +16,8 @@ Seedcompany::Application.routes.draw do
   match 'cart' => 'customers#cart', :as => :cart
   match 'add' => 'customers#add_item', :as => :add_item
   match 'remove' => 'customers#remove_item', :as => :remove_item
+  match 'update_item' => 'customers#update_item', :as => :update_item
+  match 'empty_cart' => 'customers#empty_cart', :as => :empty_cart
 
   resources :seeds do
     resources :photos

@@ -7,3 +7,6 @@
 $('.thumbs img').click ->
   full = this.src.replace('thumb_', '')
   $('.full-photo img').attr src: full
+
+$('.uq').change ->
+  $('.what').submit()
