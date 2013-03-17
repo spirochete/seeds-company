@@ -9,4 +9,4 @@ $('.thumbs img').click ->
   $('.full-photo img').attr src: full
 
 $('.uq').change ->
-  $('.what').submit()
+  this.parentNode.submit()

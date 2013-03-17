@@ -16,7 +16,7 @@
           %td
             = form_for "", :html => { :class => "what" }, :url => { :controller => 'customers', :action => 'update_item'} do |f|
               = f.text_field :quantity, :class => "uq", :name => "quantity", :id => "quantity", :value => oi.quantity
-              = f.hidden_field :order_item, :class => "uq", :name => "order_item", :id => "order_item", :value => oi.id
+              = f.hidden_field :order_item, :name => "order_item", :id => "order_item", :value => oi.id
           %td= link_to "remove", remove_item_path(:order_item => oi)
   %br
   %div= link_to "Empty Cart", empty_cart_path(:order => @order), :confirm => "Are you sure you want to empty your cart?"

@@ -31,6 +31,7 @@ $copper: #BA8E3A;
 html, body {
     background: $cream;
     color: $navy;
+    font-size: 16px;
 }
 
 a { color: $red; text-decoration: none; }
@@ -43,7 +44,7 @@ h1, h3 { color: $navy; }
 
 .cart {
 
-    width: 400px; 
+    width: 500px; 
 
 	form { margin: 0px; }
 	input { padding: 2px; margin: 0px; width: 25px; }
@@ -67,7 +68,7 @@ h1, h3 { color: $navy; }
 	.nav li a:hover { color: $cream; background: none; }
 
 	padding-top: 5px;
-	font-size: 1.25em;
+	.app-title { font-size: 1.45em; }
 
 	.navbar-search {
 	    margin-top: 3px;

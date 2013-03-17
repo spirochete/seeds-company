@@ -22,7 +22,7 @@
       .navbar
         .navbar-inner
           %ul.nav
-            %li= link_to "Seeds Company", root_path
+            %li.app-title= link_to "Seeds Company", root_path
             - if customer_signed_in?
               %li= link_to current_customer.email, edit_customer_registration_path
               %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
