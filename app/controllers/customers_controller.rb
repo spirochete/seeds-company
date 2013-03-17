@@ -12,12 +12,14 @@ class CustomersController < ApplicationController
     end
 
     @packet = Packet.find(params[:packet])
+    quantity = params[:quantity] ? params[:quantity].to_i : 1
+
     @oi = OrderItem.basic_search(:packet_id => @packet.id, :order_id => @order.id).first
     if @oi.nil?
-      @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => 1)
+      @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => quantity)
       @oi.save
     else
-      @oi.quantity += 1
+      @oi.quantity += quantity
       @oi.save
     end
 

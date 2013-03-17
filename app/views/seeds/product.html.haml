@@ -51,9 +51,17 @@
 
   - if !@seed.packets.nil?
     %b Packets Available:
-    %ul.packets-list
+    %table.packets-list
+      %tr
+        %th Size
+        %th Quantity
+        %th
       - @seed.packets.each do |packet|
-        %li
-          %b= packet.packet_size
-          = "(#{packet.quantity_available}) - $#{number_with_precision(packet.price, :precision => 2)}"
-          = link_to "add", add_item_path(:customer => current_customer, :packet => packet)
+        %tr
+          = form_for "", :url => { :action => 'add_item', :controller => 'customers' } do |f|
+            %td= packet.packet_size          
+            %td
+              = f.text_field :quantity, :name => :quantity, :maxlength => 3, :value => 1, :class => "tinytiny"
+              = f.hidden_field :customer, :name => :customer, :value => current_customer.id
+              = f.hidden_field :packet, :name => :packet, :value => packet.id
+            %td= f.submit "Add"

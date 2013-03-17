@@ -170,7 +170,9 @@ h1, h3 { color: $navy; }
 // Packet list display on single product page
 .packets-list {
 	margin-top: 10px;
-	list-style: none;
+	width: 200px;
+	input { margin-bottom: 0px; }
+	td, th { text-align: center; border: 1px solid $navy; }
 }
 
 //###############################
@@ -244,6 +246,9 @@ h1, h3 { color: $navy; }
 
 // Get rid of Devise's #eee background around submit buttons
 .form-actions { background: $dustyRose; margin-top: 0px; }
+
+// Bootstrap sets a min-width on input fields. Grr.
+.tinytiny { width: 25px; }
 
 //############################
 // End of Quirks (so you say)
