@@ -28,13 +28,16 @@ class CustomersController < ApplicationController
 
   end
 
+
+
   def remove_item
     @orderItem = OrderItem.find(params[:order_item])
     @orderItem.destroy
 
     redirect_to "/cart"
-
   end
+
+
 
   def update_item
     @orderItem = OrderItem.find(params[:order_item])
@@ -43,8 +46,9 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to "/cart", notice: "Cart was updated." }
     end
-
   end
+
+
 
   def empty_cart
     @order = Order.find(params[:order])
@@ -63,6 +67,7 @@ class CustomersController < ApplicationController
       format.json { render json: @order }
     end
   end
+
 
   # GET /customers
   # GET /customers.json

@@ -67,11 +67,15 @@ h1, h3 { color: $navy; }
 	.nav li a { color: $cream; text-shadow: none; }
 	.nav li a:hover { color: $cream; background: none; }
 
+	li.cart-horse { padding-left: 15px; margin-top: 10px; }
+
 	padding-top: 5px;
-	.app-title { font-size: 1.45em; }
+
+	.app-title { font-size: 1.45em; margin-top: 10px;  }
 
 	.navbar-search {
 	    margin-top: 3px;
+	    padding-right: 15px;
 
 	    #search {
 	    	background: $cream;

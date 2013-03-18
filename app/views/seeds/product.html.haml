@@ -28,7 +28,8 @@
 
   - if @seed.organic?
     %p
-      %b Organic &#x2713;
+      %b Organic
+      %i.icon-ok
 
   - if @seed.seed_type?
     %p
@@ -64,6 +65,7 @@
             %td= packet.packet_size          
             %td
               = f.text_field :quantity, :name => :quantity, :maxlength => 3, :value => 1, :class => "tinytiny"
-              = f.hidden_field :customer, :name => :customer, :value => current_customer.id
+              - if customer_signed_in?
+                = f.hidden_field :customer, :name => :customer, :value => current_customer.id
               = f.hidden_field :packet, :name => :packet, :value => packet.id
             %td= f.submit "Add"
