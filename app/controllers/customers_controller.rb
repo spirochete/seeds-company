@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
 
   before_filter :authenticate_admin!, :except => [:cart, :add_item, :remove_item, :update_item, :empty_cart]
   layout 'admin_layout', :except => [:cart, :add_item, :remove_item, :update_item, :empty_cart]
+  before_filter :authenticate_customer!, :only => [:add_item, :remove_item, :update_item, :empty_cart]
 
   def add_item
     @customer = current_customer

@@ -32,5 +32,5 @@
                 = seed.seed_type
                 = seed.organic ? "OG" : nil
               / If the description is too long, cut its length
-              %p= seed.notes.length > 150 ? truncate(seed.notes, :length => 150 ) : seed.notes
+              %p= seed.notes.length > 250 ? truncate(seed.notes, :length => 250 ) : seed.notes
   %p= paginate @seeds

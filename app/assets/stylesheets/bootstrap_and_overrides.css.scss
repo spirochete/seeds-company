@@ -24,6 +24,78 @@ $copper: #BA8E3A;
 //	End of colors
 //###############################
 
+@font-face {
+    font-family: 'PTSerifRegular';
+    src: url('PTF55F-webfont.eot');
+    src: url('PTF55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTF55F-webfont.woff') format('woff'),
+         url('PTF55F-webfont.ttf') format('truetype'),
+         url('PTF55F-webfont.svg#PTSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSerifItalic';
+    src: url('PTF56F-webfont.eot');
+    src: url('PTF56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTF56F-webfont.woff') format('woff'),
+         url('PTF56F-webfont.ttf') format('truetype'),
+         url('PTF56F-webfont.svg#PTSerifItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSerifBold';
+    src: url('PTF75F-webfont.eot');
+    src: url('PTF75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTF75F-webfont.woff') format('woff'),
+         url('PTF75F-webfont.ttf') format('truetype'),
+         url('PTF75F-webfont.svg#PTSerifBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSerifBoldItalic';
+    src: url('PTF76F-webfont.eot');
+    src: url('PTF76F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTF76F-webfont.woff') format('woff'),
+         url('PTF76F-webfont.ttf') format('truetype'),
+         url('PTF76F-webfont.svg#PTSerifBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSerifCaptionRegular';
+    src: url('PTZ55F-webfont.eot');
+    src: url('PTZ55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTZ55F-webfont.woff') format('woff'),
+         url('PTZ55F-webfont.ttf') format('truetype'),
+         url('PTZ55F-webfont.svg#PTSerifCaptionRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSerifCaptionItalic';
+    src: url('PTZ56F-webfont.eot');
+    src: url('PTZ56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTZ56F-webfont.woff') format('woff'),
+         url('PTZ56F-webfont.ttf') format('truetype'),
+         url('PTZ56F-webfont.svg#PTSerifCaptionItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 
 
@@ -71,15 +143,20 @@ h1, h3 { color: $navy; }
 
 	padding-top: 5px;
 
-	.app-title { font-size: 1.45em; margin-top: 10px;  }
+	.app-title {
+		font-size: 1.45em;
+		margin-top: 10px;
+	}
 
 	.navbar-search {
-	    margin-top: 3px;
-	    padding-right: 15px;
+	    margin-top: 5px;
+	    margin-bottom: 5px;
+	    float: right;
 
 	    #search {
 	    	background: $cream;
 	    	border-radius: 10px;
+	    	padding: 2px;
 	    }
 
         // In Chrome, placeholder is too damn high.
@@ -126,7 +203,9 @@ h1, h3 { color: $navy; }
 
 .hero-unit {
 	h1 + p { margin-top: 10px; }
+	h1 { font-family: 'PTSerifBold'; font-size: 4.0em; }
 	background: $dustyRose;
+	p { font-family: 'PTSerif'; font-size: 1.5em; }
 }
 
 .shop { margin-top: 20px; }
@@ -164,10 +243,11 @@ h1, h3 { color: $navy; }
 
 // Main photo displayed on single product page
 .full-photo {
-	width: 200px;
+	width: 300px;
 	margin-right: 10px;
 	margin-left: 5px;
 	background: lighten($dustyRose, 15%);
+	text-align: center;
 }
 
 // Thumbnails on single product page
@@ -177,7 +257,7 @@ h1, h3 { color: $navy; }
 	padding: 10px;
 	margin-bottom: 5px;
 
-	img { width: 64px; height: 64px; }
+	img { width: 48px; height: 48px; }
 }
 
 // Packet list display on single product page
@@ -187,6 +267,8 @@ h1, h3 { color: $navy; }
 	input { margin-bottom: 0px; }
 	td, th { text-align: center; border: 1px solid $navy; }
 }
+
+.single-product-description { width: 400px; }
 
 //###############################
 //	End of Single Product Display

@@ -10,7 +10,7 @@
   .pull-left.well.full-photo
     = image_tag(@seed.photos.first.photo_url.url)
 
-.pull-left
+.single-product-description.pull-left
   %p
     %b Catalog Number:
     = @seed.catalog_number
@@ -23,12 +23,12 @@
 
   - if @seed.pinyin
     %p
-      %b Pinyin
+      %b Pinyin:
       = @seed.pinyin
 
   - if @seed.organic?
     %p
-      %b Organic
+      %b Organic:
       %i.icon-ok
 
   - if @seed.seed_type?
@@ -62,10 +62,9 @@
       - @seed.packets.each do |packet|
         %tr
           = form_for "", :url => { :action => 'add_item', :controller => 'customers' } do |f|
-            %td= packet.packet_size          
+            %td= packet.packet_size         
             %td
               = f.text_field :quantity, :name => :quantity, :maxlength => 3, :value => 1, :class => "tinytiny"
-              - if customer_signed_in?
-                = f.hidden_field :customer, :name => :customer, :value => current_customer.id
               = f.hidden_field :packet, :name => :packet, :value => packet.id
             %td= f.submit "Add"
+  

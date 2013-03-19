@@ -26,9 +26,9 @@
               %i.icon-leaf= link_to " Seeds Company", root_path
             - if customer_signed_in?
               %li= link_to current_customer.email, edit_customer_registration_path
-              %li= link_to "Log Out", destroy_customer_session_path, :method => :delete
+              %li= link_to "(sign out)", destroy_customer_session_path, :method => :delete
               %li.cart-horse
-                %i.icon-shopping-cart= link_to " Cart", "/cart"
+                %i.icon-shopping-cart= link_to " cart", "/cart"
             -else
               %li= link_to "Login", new_customer_session_path
               %li= link_to "Register", new_customer_registration_path
@@ -36,7 +36,7 @@
 
           
           = form_tag root_path, :method => :get do
-            %p.navbar-search.pull-right
+            %p.navbar-search
               %i.icon-search
               = text_field_tag :search, params[:search], :class => "search-query", :placeholder => "Search"
 

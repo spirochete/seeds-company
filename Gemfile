@@ -30,3 +30,12 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'rspec-rails', :group => [:development, :test]
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'webrat'
+  gem 'guard-rspec'
+  gem 'rb-inotify'
+end
