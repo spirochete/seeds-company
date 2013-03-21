@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :customer do
     sequence :email do |n|
-      "skullcap#{n}@riseup.net"
+      "test@test.com"
     end
-    password "tulsitulsi"
+    password "test"
   end
 end
 

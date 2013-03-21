@@ -14,6 +14,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'turbolinks'
 gem 'haml-rails'
 gem 'cocoon'
 gem 'simple_form'
@@ -22,8 +23,6 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
-gem 'money-rails'
-
 
 group :development do
   gem 'better_errors'
