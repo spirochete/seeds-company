@@ -18,7 +18,6 @@ class CustomersController < ApplicationController
 
     # If product isn't in cart already, add. Else, ignore.
     @oi = OrderItem.basic_search(:packet_id => @packet.id, :order_id => @order.id).first
-
     if @oi.nil?
       @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => quantity)
       @oi.save
