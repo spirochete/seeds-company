@@ -140,13 +140,15 @@ h1, h3 { color: $navy; }
 	.nav li a { color: $cream; text-shadow: none; display: inline; padding: 0px; }
 	.nav li a:hover { color: $cream; background: none; }
 
-	li.cart-horse { padding-left: 15px; padding-top: 11px; }
+	li.cart-horse { padding-left: 25px; padding-top: 10px; }
 
 	.app-title {
-		font-size: 1.55em;
+		font-size: 1.5em;
 		margin-top: 7px;
 		font-family: "PTSerifRegular"
 	}
+
+	i { padding-right: 0px; }
 
 	.navbar-search {
 	    margin-top: 5px;
