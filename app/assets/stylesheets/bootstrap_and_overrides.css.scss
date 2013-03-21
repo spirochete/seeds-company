@@ -135,7 +135,7 @@ h1, h3 { color: $navy; }
 .navbar-inner {
 	background: $navy;
 	color: $cream;
-	.nav li:first-child a { padding-left: 0px; }
+	.nav li a { display: inline; padding: 0px; }
 	.nav li a { color: $cream; text-shadow: none; }
 	.nav li a:hover { color: $cream; background: none; }
 
