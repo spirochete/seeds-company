@@ -23,7 +23,8 @@
         .navbar-inner
           %ul.nav
             %li.app-title
-              %i.icon-leaf= link_to " Seeds Company", root_path
+              %i.icon-leaf
+              = link_to "Seeds Company", root_path
             - if customer_signed_in?
               %li.cart-horse
                 = link_to current_customer.email, edit_customer_registration_path

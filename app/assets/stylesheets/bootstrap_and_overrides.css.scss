@@ -26,11 +26,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifRegular';
-    src: url('PTF55F-webfont.eot');
-    src: url('PTF55F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTF55F-webfont.woff') format('woff'),
-         url('PTF55F-webfont.ttf') format('truetype'),
-         url('PTF55F-webfont.svg#PTSerifRegular') format('svg');
+    src: url('fonts/PTF55F-webfont.eot');
+    src: url('fonts/PTF55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTF55F-webfont.woff') format('woff'),
+         url('fonts/PTF55F-webfont.ttf') format('truetype'),
+         url('fonts/PTF55F-webfont.svg#PTSerifRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -38,11 +38,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifItalic';
-    src: url('PTF56F-webfont.eot');
-    src: url('PTF56F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTF56F-webfont.woff') format('woff'),
-         url('PTF56F-webfont.ttf') format('truetype'),
-         url('PTF56F-webfont.svg#PTSerifItalic') format('svg');
+    src: url('fonts/PTF56F-webfont.eot');
+    src: url('fonts/PTF56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTF56F-webfont.woff') format('woff'),
+         url('fonts/PTF56F-webfont.ttf') format('truetype'),
+         url('fonts/PTF56F-webfont.svg#PTSerifItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -50,11 +50,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifBold';
-    src: url('PTF75F-webfont.eot');
-    src: url('PTF75F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTF75F-webfont.woff') format('woff'),
-         url('PTF75F-webfont.ttf') format('truetype'),
-         url('PTF75F-webfont.svg#PTSerifBold') format('svg');
+    src: url('fonts/PTF75F-webfont.eot');
+    src: url('fonts/PTF75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTF75F-webfont.woff') format('woff'),
+         url('fonts/PTF75F-webfont.ttf') format('truetype'),
+         url('fonts/PTF75F-webfont.svg#PTSerifBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -62,11 +62,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifBoldItalic';
-    src: url('PTF76F-webfont.eot');
-    src: url('PTF76F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTF76F-webfont.woff') format('woff'),
-         url('PTF76F-webfont.ttf') format('truetype'),
-         url('PTF76F-webfont.svg#PTSerifBoldItalic') format('svg');
+    src: url('fonts/PTF76F-webfont.eot');
+    src: url('fonts/PTF76F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTF76F-webfont.woff') format('woff'),
+         url('fonts/PTF76F-webfont.ttf') format('truetype'),
+         url('fonts/PTF76F-webfont.svg#PTSerifBoldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -74,11 +74,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifCaptionRegular';
-    src: url('PTZ55F-webfont.eot');
-    src: url('PTZ55F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTZ55F-webfont.woff') format('woff'),
-         url('PTZ55F-webfont.ttf') format('truetype'),
-         url('PTZ55F-webfont.svg#PTSerifCaptionRegular') format('svg');
+    src: url('fonts/PTZ55F-webfont.eot');
+    src: url('fonts/PTZ55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTZ55F-webfont.woff') format('woff'),
+         url('fonts/PTZ55F-webfont.ttf') format('truetype'),
+         url('fonts/PTZ55F-webfont.svg#PTSerifCaptionRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -86,11 +86,11 @@ $copper: #BA8E3A;
 
 @font-face {
     font-family: 'PTSerifCaptionItalic';
-    src: url('PTZ56F-webfont.eot');
-    src: url('PTZ56F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTZ56F-webfont.woff') format('woff'),
-         url('PTZ56F-webfont.ttf') format('truetype'),
-         url('PTZ56F-webfont.svg#PTSerifCaptionItalic') format('svg');
+    src: url('fonts/PTZ56F-webfont.eot');
+    src: url('fonts/PTZ56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PTZ56F-webfont.woff') format('woff'),
+         url('fonts/PTZ56F-webfont.ttf') format('truetype'),
+         url('fonts/PTZ56F-webfont.svg#PTSerifCaptionItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -135,17 +135,17 @@ h1, h3 { color: $navy; }
 .navbar-inner {
 	background: $navy;
 	color: $cream;
-	.nav li a { display: inline; padding: 0px; }
-	.nav li a { color: $cream; text-shadow: none; }
+
+	padding-top: 5px;	
+	.nav li a { color: $cream; text-shadow: none; display: inline; padding: 0px; }
 	.nav li a:hover { color: $cream; background: none; }
 
-	li.cart-horse { padding-left: 15px; margin-top: 10px; }
-
-	padding-top: 5px;
+	li.cart-horse { padding-left: 15px; padding-top: 11px; }
 
 	.app-title {
-		font-size: 1.45em;
-		margin-top: 10px;
+		font-size: 1.55em;
+		margin-top: 7px;
+		font-family: "PTSerifRegular"
 	}
 
 	.navbar-search {
@@ -161,7 +161,8 @@ h1, h3 { color: $navy; }
 
         // In Chrome, placeholder is too damn high.
 		::-webkit-input-placeholder {
-	    	padding-top: 5px;
+		    padding-left: 2px;
+	    	padding-top: 6px;
 	    }
 	}
 }
@@ -202,10 +203,9 @@ h1, h3 { color: $navy; }
 //###############################
 
 .hero-unit {
-	h1 + p { margin-top: 10px; }
-	h1 { font-family: 'PTSerifBold'; font-size: 4.0em; }
+	h1 { font-family: 'PTSerif'; font-size: 4.0em; }
 	background: $dustyRose;
-	p { font-family: 'PTSerifCaptionRegular'; font-size: 1.5em; }
+	p { font-family: 'PTSerifCaptionRegular'; font-size: 1.25em; }
 }
 
 .shop { margin-top: 20px; }
