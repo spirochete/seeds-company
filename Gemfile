@@ -14,7 +14,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'haml-rails'
 gem 'cocoon'
 gem 'simple_form'
