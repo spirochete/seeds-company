@@ -20,7 +20,7 @@
   %body
     .navbar
       .navbar-inner
-        %ul.nav
+        %ul.nav.admin-nav
           %li= link_to "Admin", seeds_path
           - if admin_signed_in?
             %li= link_to current_admin.email, edit_admin_registration_path
