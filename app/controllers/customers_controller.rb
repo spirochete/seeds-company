@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
 
   def add_item
     @customer = current_customer
-    @order = Order.basic_search(:customer_id => @customer.id, :order_status => "CART").first
+    @order = Order.search(:customer_id => @customer.id, :order_status => "CART").first
     if @order.nil?
       @order = @customer.orders.build
       @order.order_status = "CART"
@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
     quantity = params[:quantity].to_i
 
     # If product isn't in cart already, add. Else, ignore.
-    @oi = OrderItem.basic_search(:packet_id => @packet.id, :order_id => @order.id).first
+    @oi = OrderItem.search(:packet_id => @packet.id, :order_id => @order.id).first
     if @oi.nil?
       @oi = @order.order_items.build(:packet_id => @packet.id, :cost => @packet.price, :quantity => quantity)
       @oi.save
